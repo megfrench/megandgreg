@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MEG AND GREG GROUP LLC - Federal Contracting, DoD Logistics Broker, and Brand Management">
+    <title>MEG AND GREG GROUP LLC | Federal Contracting & Logistics</title>
+
+    <!-- Google Fonts: Inter for a clean, corporate look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config & CSS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        corporate: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#334e68',
+                            700: '#243b53',
+                            900: '#102a43', // Deep navy
+                        },
+                        accent: {
+                            400: '#a64d4d', // Lighter muted red for gradients
+                            500: '#8b3333', // Muted flat dark red for corporate elegance
+                            600: '#6e2727', // Darker muted red for hover states
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom base styles to complement Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-menu-active {
+            display: flex !important;
+            animation: slideDown 0.3s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Custom checkbox style */
+        input[type="checkbox"]:checked {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+            background-color: #8b3333;
+            border-color: #8b3333;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo: Increased size significantly to fill header without expanding it -->
+                <div class="flex-shrink-0 flex items-center h-full py-1.5">
+                    <a href="#" class="flex items-center h-full">
+                        <img src="MGGLogo.png" alt="MEG AND GREG GROUP LLC Logo" class="h-14 sm:h-[68px] w-auto object-contain">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="about_us.html" class="text-sm font-medium text-slate-600 hover:text-corporate-900 transition">About Us</a>
+                    <a href="#capabilities" class="text-sm font-medium text-slate-600 hover:text-corporate-900 transition">Capabilities</a>
+                    <a href="#portfolio" class="text-sm font-medium text-slate-600 hover:text-corporate-900 transition">Our Portfolio</a>
+                    <a href="#contact" class="bg-corporate-900 text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-corporate-700 transition shadow-sm">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-corporate-900 focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden flex-col bg-white border-t border-slate-100 shadow-lg absolute w-full left-0">
+            <a href="about_us.html" class="px-6 py-4 text-sm font-medium border-b border-slate-50 text-slate-600 hover:bg-slate-50 mobile-link">About Us</a>
+            <a href="#capabilities" class="px-6 py-4 text-sm font-medium border-b border-slate-50 text-slate-600 hover:bg-slate-50 mobile-link">Capabilities</a>
+            <a href="#portfolio" class="px-6 py-4 text-sm font-medium border-b border-slate-50 text-slate-600 hover:bg-slate-50 mobile-link">Our Portfolio</a>
+            <a href="#contact" class="px-6 py-4 text-sm font-medium text-accent-600 hover:bg-slate-50 mobile-link">Contact Us</a>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-corporate-900 text-white">
+        <!-- Subtle Star Pattern Texture -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <svg class="absolute h-full w-full" aria-hidden="true">
+                <defs>
+                    <pattern id="hero-star-pattern" width="36" height="36" patternUnits="userSpaceOnUse">
+                        <path transform="translate(15, 15) scale(0.6)" d="M5 0L6.545 3.177L10 3.677L7.5 6.115L8.09 9.576L5 7.95L1.91 9.576L2.5 6.115L0 3.677L3.455 3.177Z" fill="rgba(255, 255, 255, 0.08)"></path>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#hero-star-pattern)"></rect>
+            </svg>
+        </div>
+
+        <!-- Soft Ambient Glow -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div class="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-corporate-500/30 blur-[120px]"></div>
+            <div class="absolute bottom-[-20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-accent-500/15 blur-[120px]"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto fade-in-up">
+                <span class="inline-block py-1.5 px-4 rounded-full bg-white/10 text-white text-xs font-bold tracking-widest uppercase mb-6 border border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.2)] [text-shadow:0_0_10px_rgba(255,255,255,0.8)]">
+                    WOSB Small Business LLC
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                    Strategic Execution in <br class="hidden md:block" /> 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-accent-400">DoD Logistics & Contracting</span>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto font-light">
+                    MEG AND GREG GROUP LLC operates as a specialized DoD logistics broker and premier holding company, delivering robust operational excellence across government sectors and commercial brands.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#portfolio" class="bg-accent-500 text-white px-8 py-3.5 rounded-md font-medium hover:bg-accent-600 transition shadow-lg text-center">
+                        Explore Our Brands
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-white/30 text-white px-8 py-3.5 rounded-md font-medium hover:bg-white/10 transition text-center">
+                        Partner With Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-up delay-100">
+                    <h4 class="text-accent-500 font-semibold tracking-wide uppercase mb-2">About The Organization</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-corporate-900 mb-6">Building Sustainable Value Across Sectors</h2>
+                    <p class="text-slate-600 mb-5 leading-relaxed">
+                        Operating at the intersection of public sector requirements and private sector innovation, <strong>MEG AND GREG GROUP LLC</strong> functions not only as a parent holding company but as a specialized <strong>DoD logistics broker and firm</strong>. 
+                    </p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        As a registered federal contracting entity, we maintain the highest standards of compliance and efficiency. Simultaneously, we nurture and scale consumer-facing platforms that enrich lives and streamline commerce and supply chains.
+                    </p>
+                    
+                    <!-- New Mission Statement Block -->
+                    <div class="bg-corporate-50 p-6 rounded-lg border-l-4 border-accent-500 mb-6 shadow-sm">
+                        <h4 class="text-corporate-900 font-bold mb-2 flex items-center">
+                            <i class="fas fa-flag text-accent-500 mr-2"></i> Our Mission
+                        </h4>
+                        <p class="text-slate-700 italic text-sm md:text-base leading-relaxed">
+                            "Keeping manufacturing and jobs in America while partnering with other businesses to provide preferential hiring to veterans."
+                        </p>
+                    </div>
+
+                    <!-- Supporter Badge -->
+                    <div class="flex items-center gap-4 mb-8 p-4 bg-white border border-slate-200 rounded-lg shadow-sm">
+                        <div class="w-10 h-10 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-500 flex-shrink-0 border border-yellow-200">
+                            <i class="fas fa-ribbon text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-corporate-900">Proud Supporter & Fundraiser</p>
+                            <p class="text-sm text-slate-600 mt-1">&bull; Concerned Vets for America</p>
+                            <p class="text-sm text-slate-600 mt-0.5">&bull; Stop Soldier Suicide</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-8">
+                        <div>
+                            <p class="text-3xl font-bold text-corporate-900">100%</p>
+                            <p class="text-sm text-slate-500 font-medium">Compliance Driven</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-corporate-900">2</p>
+                            <p class="text-sm text-slate-500 font-medium">Flagship Brands</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative fade-in-up delay-200">
+                    <video src="MGGVideo.mp4" autoplay loop muted playsinline class="rounded-lg shadow-xl border border-slate-100 w-full"></video>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl border border-slate-100 hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-corporate-50 p-3 rounded-full text-corporate-900">
+                                <i class="fas fa-handshake text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-corporate-900">Trusted Partner</p>
+                                <p class="text-sm text-slate-500">In B2B & B2G Sectors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="capabilities" class="py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h4 class="text-accent-500 font-semibold tracking-wide uppercase mb-2">Our Capabilities</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-corporate-900 mb-4">Comprehensive Enterprise Solutions</h2>
+                <p class="text-slate-600">Leveraging our holding structure to provide unparalleled agility and scale in both government contracting and commercial markets.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cap 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow fade-in-up delay-100">
+                    <div class="w-14 h-14 bg-corporate-50 rounded-lg flex items-center justify-center text-corporate-900 mb-6">
+                        <i class="fas fa-file-contract text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-corporate-900 mb-3">Federal Contracting</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Registered and equipped to bid, manage, and execute complex federal contracts with strict adherence to procurement regulations.</p>
+                </div>
+
+                <!-- Cap 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow fade-in-up delay-200">
+                    <div class="w-14 h-14 bg-corporate-50 rounded-lg flex items-center justify-center text-corporate-900 mb-6">
+                        <i class="fas fa-truck-fast text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-corporate-900 mb-3">DoD Logistics Brokerage</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Serving as a specialized liaison optimizing supply chains, procurement, and resource distribution specifically for Department of Defense frameworks.</p>
+                </div>
+
+                <!-- Cap 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow fade-in-up delay-300">
+                    <div class="w-14 h-14 bg-corporate-50 rounded-lg flex items-center justify-center text-corporate-900 mb-6">
+                        <i class="fas fa-building text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-corporate-900 mb-3">Brand Portfolio Management</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Strategic oversight, capital allocation, and shared operational resources to incubate and scale our proprietary brands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h4 class="text-accent-500 font-semibold tracking-wide uppercase mb-2">Our Portfolio</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-corporate-900 mb-4">Flagship Brands</h2>
+                <p class="text-slate-600">MEG AND GREG GROUP currently operates two primary brands, each serving distinct market needs while benefiting from our centralized holding structure.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- Brand 1: Lodging Sources -->
+                <div class="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full fade-in-up delay-100">
+                    <div class="p-8 flex-1 flex flex-col bg-white z-10 relative">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <!-- Lodging Sources Logo updated with provided filename -->
+                                <img src="LSLogo_light.png" alt="Lodging Sources Logo" class="w-12 h-12 object-contain bg-transparent border-none rounded">
+                                <h3 class="text-2xl font-bold text-corporate-900">Lodging Sources</h3>
+                            </div>
+                            <span class="bg-blue-50 text-blue-700 text-[10px] font-bold px-3 py-1 rounded-full border border-blue-200 uppercase tracking-wider text-center">Government B2B/B2G Lodging</span>
+                        </div>
+                        <div class="text-slate-600 mb-8 flex-1 space-y-3">
+                            <p class="text-sm leading-relaxed">
+                                A WOSB Certified Prime Contractor providing turnkey event, lodging, and catering logistics for the Federal Government. We connect the DoD with perfect event spaces and accommodations that strictly adhere to SOWs and GSA Per Diem requirements.
+                            </p>
+                            <p class="text-sm leading-relaxed">
+                                From <strong>YRRP events</strong> and <strong>VA medical lodging</strong> to rapid deployment of emergency housing blocks, we offer single-point-of-contact coordination. We handle Master Billing via WAWF and provide full on-site representation, acting as the primary liaison between military cadre and subcontractors.
+                            </p>
+                        </div>
+                        <a href="https://lodgingsources.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-corporate-900 font-semibold hover:text-accent-500 transition-colors">
+                            Visit Lodgingsources.com <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Brand 2: PINK PILLED -->
+                <div class="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full fade-in-up delay-200">
+                    <div class="p-8 flex-1 flex flex-col bg-white z-10 relative">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
+                            <div class="flex items-center gap-3">
+                                <!-- PINK PILLED Logo updated with provided filename -->
+                                <img src="PINK PILLED Logo.png" alt="PINK PILLED Logo" class="w-12 h-12 object-contain bg-transparent border-none rounded">
+                                <h3 class="text-2xl font-bold text-corporate-900">PINK PILLED&trade;</h3>
+                            </div>
+                            <span class="bg-pink-100 text-[#ff66a3] text-[10px] font-bold px-3 py-1 rounded-full border border-pink-200 uppercase tracking-wider text-center">Health Sciences R&D</span>
+                        </div>
+                        <div class="text-slate-600 mb-8 flex-1 space-y-3">
+                            <p class="text-sm leading-relaxed">
+                                A highly capable Prime Contractor navigating complex solicitations across the DoD, NIH, and DHA. We specialize in <strong>Bioinformatics & Biosurveillance</strong>, architecting genomic data pipelines and biological threat models.
+                            </p>
+                            <p class="text-sm leading-relaxed">
+                                Through strategic <strong>Scouting & Discovery</strong>, we identify disruptive commercial technologies from non-traditional creators and transition their innovations into the hands of the warfighter to maintain asymmetric advantage.
+                            </p>
+                        </div>
+                        <a href="https://pinkpilled.life" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full bg-[#ff66a3] text-white font-semibold py-3 rounded-md hover:bg-[#e65c92] transition-colors shadow-sm">
+                            Visit Pinkpilled.life <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-slate-900 text-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-corporate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700 fade-in-up">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    
+                    <!-- Contact Info Sidebar -->
+                    <div class="p-8 lg:p-12 lg:col-span-4 bg-corporate-900 flex flex-col justify-start">
+                        <h3 class="text-3xl font-bold text-white mb-4">Get in Touch</h3>
+                        <p class="text-slate-300 mb-10 text-sm leading-relaxed">Whether you are an agency seeking a reliable contracting partner, inquiring about a teaming agreement, or exploring our logistics brokerage services, we are ready to connect.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-map-marker-alt text-accent-500 text-xl w-6"></i>
+                                </div>
+                                <div class="ml-4 text-slate-300">
+                                    <p class="font-medium text-white">Headquarters</p>
+                                    <p class="text-sm mt-1">Chillicothe, Ohio</p>
+                                    <p class="text-sm mt-1 text-slate-400">United States</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-envelope text-accent-500 text-xl w-6"></i>
+                                </div>
+                                <div class="ml-4 text-slate-300">
+                                    <p class="font-medium text-white">General Inquiries</p>
+                                    <p class="text-sm mt-1">contact@megandgreg.us</p> 
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-shield-halved text-accent-500 text-xl w-6"></i>
+                                </div>
+                                <div class="ml-4 text-slate-300">
+                                    <p class="font-medium text-white">B2B / B2G Operations</p>
+                                    <p class="text-sm mt-1">SAM.gov Registered</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comprehensive Contact Form -->
+                    <div class="p-8 lg:p-12 lg:col-span-8 bg-white text-slate-800">
+                        <form id="contactForm" class="space-y-6">
+                            
+                            <!-- Basic Information Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="name" class="block text-sm font-semibold text-slate-700 mb-1">Full Name <span class="text-accent-500">*</span></label>
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="Jane Doe">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold text-slate-700 mb-1">Email Address <span class="text-accent-500">*</span></label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="jane@example.com">
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-sm font-semibold text-slate-700 mb-1">Company / Organization <span class="text-accent-500">*</span></label>
+                                    <input type="text" id="company" name="company" required class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="Company Name">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-semibold text-slate-700 mb-1">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="(555) 123-4567">
+                                </div>
+                            </div>
+
+                            <!-- B2B / B2G Identifiers -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                <div>
+                                    <label for="uei" class="block text-sm font-semibold text-slate-700 mb-1">UEI <span class="text-xs font-normal text-slate-500">(If applicable for B2B/B2G)</span></label>
+                                    <input type="text" id="uei" name="uei" class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="12-character alphanumeric">
+                                </div>
+                                <div>
+                                    <label for="cage" class="block text-sm font-semibold text-slate-700 mb-1">CAGE Code <span class="text-xs font-normal text-slate-500">(If applicable)</span></label>
+                                    <input type="text" id="cage" name="cage" class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="5-character code">
+                                </div>
+                            </div>
+
+                            <!-- Inquiry Type Checkboxes -->
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-3">Nature of Inquiry (Select all that apply) <span class="text-accent-500">*</span></label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="dod_logistics" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">DoD Logistics Brokerage</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="teaming" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Teaming Agreement / Partnership</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="federal_contracting" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Federal Contracting Services</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="veteran_hiring" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Veteran Preferential Hiring Init.</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="portfolio_brands" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Portfolio Brands (LS or Pink Pilled)</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="other" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Other Request</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Specific Details Textarea -->
+                            <div>
+                                <label for="details" class="block text-sm font-semibold text-slate-700 mb-1">Additional Context</label>
+                                <textarea id="details" name="details" rows="3" class="w-full px-4 py-3 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all resize-none" placeholder="Provide any necessary context, solicitation numbers, or specific requirements here..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-corporate-900 text-white font-medium py-3 px-4 rounded-md hover:bg-corporate-700 transition duration-300 shadow-md flex justify-center items-center">
+                                <span>Submit Secure Inquiry</span>
+                                <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                        
+                        <!-- Form Success Message (Hidden by default) -->
+                        <div id="form-success" class="hidden mt-4 p-4 bg-green-50 text-green-700 rounded-md border border-green-200 text-sm flex items-center">
+                            <i class="fas fa-check-circle mr-2 text-lg"></i>
+                            Thank you. Your detailed inquiry has been received securely.
+                        </div>
+                        <!-- Form Error Message (Hidden by default) -->
+                        <div id="form-error" class="hidden mt-4 p-4 bg-red-50 text-red-700 rounded-md border border-red-200 text-sm flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2 text-lg"></i>
+                            Please select at least one Nature of Inquiry option before submitting.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800 text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="block mb-6">
+                        <!-- Logo: Significantly increased size for prominence -->
+                        <img src="MGGLogodark.png" alt="MEG AND GREG GROUP LLC Logo" class="h-24 md:h-32 w-auto object-contain">
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6">
+                        A registered holding company specializing in federal contracting, DoD logistics brokerage, and scalable operations focused on domestic manufacturing and veteran hiring.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Portfolio</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="https://lodgingsources.com" target="_blank" class="block py-1 hover:text-accent-500 transition-colors">Lodging Sources</a></li>
+                        <li><a href="https://pinkpilled.life" target="_blank" class="block py-1 hover:text-[#ff66a3] transition-colors">PINK PILLED&trade;</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="about_us.html" class="block py-1 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#capabilities" class="block py-1 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="#contact" class="block py-1 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm">&copy; <span id="year"></span> MEG AND GREG GROUP LLC. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="privacy_policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const icon = btn.querySelector('i');
+
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('mobile-menu-active');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+
+        // Close mobile menu on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!menu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+
+        // Form Validation and Submission Handler
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('form-success');
+        const formError = document.getElementById('form-error');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Check if at least one checkbox is checked
+            const checkboxes = document.querySelectorAll('input[name="inquiry_type"]:checked');
+            if (checkboxes.length === 0) {
+                formError.classList.remove('hidden');
+                formSuccess.classList.add('hidden');
+                
+                // Hide error after 5 seconds
+                setTimeout(() => {
+                    formError.classList.add('hidden');
+                }, 5000);
+                return; // Stop form submission
+            }
+            
+            // If validation passes, hide error (if any) and show success
+            formError.classList.add('hidden');
+            
+            // In a real scenario, you would handle the fetch/XHR request to your backend here.
+            
+            // Show success message and reset form for UI demonstration
+            contactForm.reset();
+            formSuccess.classList.remove('hidden');
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                formSuccess.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Simple Intersection Observer for scroll animations (fade-in-up)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Pause animations initially so they play only when scrolled into view
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+    </script>
+</body>
+</html>

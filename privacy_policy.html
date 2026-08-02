@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for MEG AND GREG GROUP LLC">
+    <title>Privacy Policy | MEG AND GREG GROUP LLC</title>
+
+    <!-- Google Fonts: Inter for a clean, corporate look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config & CSS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        corporate: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#334e68',
+                            700: '#243b53',
+                            900: '#102a43', // Deep navy
+                        },
+                        accent: {
+                            400: '#a64d4d', // Lighter muted red for gradients
+                            500: '#8b3333', // Muted flat dark red for corporate elegance
+                            600: '#6e2727', // Darker muted red for hover states
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom base styles to complement Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-menu-active {
+            display: flex !important;
+            animation: slideDown 0.3s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center h-full py-1.5">
+                    <a href="index.html" class="flex items-center h-full">
+                        <img src="MGGLogo.png" alt="MEG AND GREG GROUP LLC Logo" class="h-14 sm:h-[68px] w-auto object-contain">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html#about" class="text-sm font-medium text-slate-600 hover:text-corporate-900 transition">About Us</a>
+                    <a href="index.html#capabilities" class="text-sm font-medium text-slate-600 hover:text-corporate-900 transition">Capabilities</a>
+                    <a href="index.html#portfolio" class="text-sm font-medium text-slate-600 hover:text-corporate-900 transition">Our Portfolio</a>
+                    <a href="index.html#contact" class="bg-corporate-900 text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-corporate-700 transition shadow-sm">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-corporate-900 focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden flex-col bg-white border-t border-slate-100 shadow-lg absolute w-full left-0">
+            <a href="index.html#about" class="px-6 py-4 text-sm font-medium border-b border-slate-50 text-slate-600 hover:bg-slate-50 mobile-link">About Us</a>
+            <a href="index.html#capabilities" class="px-6 py-4 text-sm font-medium border-b border-slate-50 text-slate-600 hover:bg-slate-50 mobile-link">Capabilities</a>
+            <a href="index.html#portfolio" class="px-6 py-4 text-sm font-medium border-b border-slate-50 text-slate-600 hover:bg-slate-50 mobile-link">Our Portfolio</a>
+            <a href="index.html#contact" class="px-6 py-4 text-sm font-medium text-accent-600 hover:bg-slate-50 mobile-link">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-12 bg-corporate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute -top-[50%] -left-[10%] w-[70%] h-[70%] rounded-full bg-corporate-500/20 blur-[100px]"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 fade-in-up">Privacy Policy</h1>
+            <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto fade-in-up delay-100">
+                Last Updated: <span id="current-date">July 31, 2026</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-slate max-w-none fade-in-up delay-200">
+                
+                <p class="lead text-lg text-slate-600 mb-8 border-l-4 border-accent-500 pl-4 bg-slate-50 py-3 rounded-r-md">
+                    MEG AND GREG GROUP LLC ("we," "our," or "us") respects your privacy and is committed to protecting it through our compliance with this policy. This Privacy Policy describes the types of information we may collect from you or that you may provide when you visit the website (our "Website") and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+                </p>
+
+                <h2 class="text-2xl font-bold text-corporate-900 mt-10 mb-4 pb-2 border-b border-slate-100">1. Information We Collect About You</h2>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    We collect several types of information from and about users of our Website, including information:
+                </p>
+                <ul class="list-disc pl-6 text-slate-600 mb-6 space-y-2 marker:text-corporate-500">
+                    <li>By which you may be personally identified, such as name, postal address, e-mail address, telephone number, or any other identifier by which you may be contacted online or offline ("personal information");</li>
+                    <li>That is about you but individually does not identify you, such as your company name, UEI, or CAGE code (when provided voluntarily in a business context); and/or</li>
+                    <li>About your internet connection, the equipment you use to access our Website, and usage details.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-corporate-900 mt-10 mb-4 pb-2 border-b border-slate-100">2. How We Collect Information</h2>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    We collect this information:
+                </p>
+                <ul class="list-disc pl-6 text-slate-600 mb-6 space-y-2 marker:text-corporate-500">
+                    <li>Directly from you when you provide it to us, such as by filling in forms on our Website (e.g., our "Contact Us" form).</li>
+                    <li>Automatically as you navigate through the site. Information collected automatically may include usage details, IP addresses, and information collected through cookies and other tracking technologies.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-corporate-900 mt-10 mb-4 pb-2 border-b border-slate-100">3. How We Use Your Information</h2>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    We use information that we collect about you or that you provide to us, including any personal information:
+                </p>
+                <ul class="list-disc pl-6 text-slate-600 mb-6 space-y-2 marker:text-corporate-500">
+                    <li>To present our Website and its contents to you.</li>
+                    <li>To provide you with information, products, or services that you request from us.</li>
+                    <li>To fulfill any other purpose for which you provide it (such as responding to inquiries regarding teaming agreements or federal contracting).</li>
+                    <li>To carry out our obligations and enforce our rights arising from any contracts entered into between you and us.</li>
+                    <li>To notify you about changes to our Website or any products or services we offer or provide though it.</li>
+                    <li>In any other way we may describe when you provide the information.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-corporate-900 mt-10 mb-4 pb-2 border-b border-slate-100">4. Disclosure of Your Information</h2>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    We may disclose aggregated information about our users, and information that does not identify any individual, without restriction. We may disclose personal information that we collect or you provide as described in this privacy policy:
+                </p>
+                <ul class="list-disc pl-6 text-slate-600 mb-6 space-y-2 marker:text-corporate-500">
+                    <li>To our subsidiaries and affiliates (such as Lodging Sources and PINK PILLED).</li>
+                    <li>To contractors, service providers, and other third parties we use to support our business.</li>
+                    <li>To a buyer or other successor in the event of a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of MEG AND GREG GROUP LLC's assets.</li>
+                    <li>To comply with any court order, law, or legal process, including to respond to any government or regulatory request (critical given our operations in federal contracting).</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-corporate-900 mt-10 mb-4 pb-2 border-b border-slate-100">5. Data Security</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    We have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure. The safety and security of your information also depends on you. We urge you to be careful about giving out information in public areas of the Website like message boards, if applicable. Unfortunately, the transmission of information via the internet is not completely secure. Although we do our best to protect your personal information, we cannot guarantee the security of your personal information transmitted to our Website.
+                </p>
+
+                <h2 class="text-2xl font-bold text-corporate-900 mt-10 mb-4 pb-2 border-b border-slate-100">6. Changes to Our Privacy Policy</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    It is our policy to post any changes we make to our privacy policy on this page. If we make material changes to how we treat our users' personal information, we will notify you through a notice on the Website home page. The date the privacy policy was last revised is identified at the top of the page.
+                </p>
+
+                <h2 class="text-2xl font-bold text-corporate-900 mt-10 mb-4 pb-2 border-b border-slate-100">7. Contact Information</h2>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    To ask questions or comment about this privacy policy and our privacy practices, contact us at:
+                </p>
+                <div class="bg-corporate-50 p-6 rounded-lg border border-slate-100 mt-4">
+                    <p class="font-bold text-corporate-900 mb-1">MEG AND GREG GROUP LLC</p>
+                    <p class="text-slate-600 mb-1">Chillicothe, Ohio</p>
+                    <p class="text-slate-600 mb-3">United States</p>
+                    <p class="text-slate-600 flex items-center">
+                        <i class="fas fa-envelope text-accent-500 mr-2"></i>
+                        <a href="mailto:contact@megandgreg.us" class="hover:text-corporate-900 transition-colors">contact@megandgreg.us</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800 text-slate-400 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <div class="col-span-1 md:col-span-1">
+                    <a href="index.html" class="block mb-6">
+                        <img src="MGGLogodark.png" alt="MEG AND GREG GROUP LLC Logo" class="h-24 md:h-32 w-auto object-contain">
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6">
+                        A registered holding company specializing in federal contracting, DoD logistics brokerage, and scalable operations focused on domestic manufacturing and veteran hiring.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Portfolio</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="https://lodgingsources.com" target="_blank" class="block py-1 hover:text-accent-500 transition-colors">Lodging Sources</a></li>
+                        <li><a href="https://pinkpilled.life" target="_blank" class="block py-1 hover:text-[#ff66a3] transition-colors">PINK PILLED&trade;</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html#about" class="block py-1 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="index.html#capabilities" class="block py-1 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="index.html#contact" class="block py-1 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm">&copy; <span id="year"></span> MEG AND GREG GROUP LLC. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="privacy-policy.html" class="text-white hover:text-accent-500 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Set current date for "Last Updated"
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', dateOptions);
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('mobile-menu-active');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+
+        // Simple Intersection Observer for scroll animations (fade-in-up)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
