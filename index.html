@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,123 +11,293 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- DNS Prefetch & Async Loading for FontAwesome -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Custom Tailwind Config & CSS -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        corporate: {
-                            50: '#f0f4f8',
-                            100: '#d9e2ec',
-                            500: '#334e68',
-                            700: '#243b53',
-                            900: '#102a43', // Deep navy
-                        },
-                        accent: {
-                            400: '#a64d4d', // Lighter muted red for gradients
-                            500: '#8b3333', // Muted flat dark red for corporate elegance
-                            600: '#6e2727', // Darker muted red for hover states
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- 
+      TAILWIND JS COMPILER REMOVED FOR MAXIMUM PERFORMANCE.
+      The entire site has been meticulously re-written in pristine Vanilla CSS below
+      to ensure instant loading on mobile devices while keeping the exact design intact.
+    -->
     <style>
-        /* Custom base styles to complement Tailwind */
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
+        :root {
+            /* Custom Colors */
+            --corp-50: #f0f4f8; --corp-100: #d9e2ec; --corp-500: #334e68; --corp-700: #243b53; --corp-900: #102a43;
+            --acc-400: #a64d4d; --acc-500: #8b3333; --acc-600: #6e2727;
+            /* Slate Palette */
+            --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0; --slate-300: #cbd5e1; --slate-400: #94a3b8;
+            --slate-500: #64748b; --slate-600: #475569; --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a; --slate-950: #020617;
+            --white: #ffffff;
+            /* Typography & Layout */
+            --font-sans: 'Inter', sans-serif;
+            --max-w: 80rem; /* 1280px */
         }
 
+        *, *::before, *::after { box-sizing: border-box; }
+        * { margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-sans); background-color: var(--slate-50); color: var(--slate-800); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+        img, video, svg { display: block; max-width: 100%; height: auto; }
+        button, input, textarea { font-family: inherit; }
+        
+        .container { width: 100%; max-width: var(--max-w); margin-inline: auto; padding-inline: 1rem; }
+        @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+        @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
+        
+        .section { padding-block: 5rem; }
+        .text-center { text-align: center; }
+        .hidden { display: none !important; }
+        
+        /* Typography */
+        h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
+        .section-subtitle { color: var(--acc-500); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem; margin-bottom: 0.5rem; display: block; }
+        .section-title { font-size: 1.875rem; color: var(--corp-900); margin-bottom: 1rem; }
+        @media (min-width: 768px) { .section-title { font-size: 2.25rem; } }
+        .section-desc { color: var(--slate-600); max-width: 48rem; margin-inline: auto; margin-bottom: 4rem; }
+        
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; font-weight: 500; border-radius: 0.375rem; transition: all 0.3s ease; cursor: pointer; border: none; text-align: center; font-size: 1rem; }
+        .btn-sm { padding: 0.625rem 1.25rem; font-size: 0.875rem; }
+        .btn-corp { background-color: var(--corp-900); color: var(--white); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .btn-corp:hover { background-color: var(--corp-700); }
+        .btn-acc { background-color: var(--acc-500); color: var(--white); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .btn-acc:hover { background-color: var(--acc-600); }
+        .btn-outline { background-color: transparent; border: 2px solid rgba(255,255,255,0.3); color: var(--white); }
+        .btn-outline:hover { background-color: rgba(255,255,255,0.1); }
+        
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 50; transition: all 0.3s; background-color: rgba(255,255,255,0.95); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); height: 5rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+        .navbar.scrolled { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        
+        .nav-logo-link { display: flex; align-items: center; height: 100%; padding-block: 0.375rem; }
+        .nav-logo-img { height: 3.5rem; width: auto; object-fit: contain; }
+        @media (min-width: 640px) { .nav-logo-img { height: 4.25rem; } }
+        
+        .nav-links { display: none; align-items: center; gap: 2rem; }
+        @media (min-width: 768px) { .nav-links { display: flex; } }
+        .nav-link { font-size: 0.875rem; font-weight: 500; color: var(--slate-600); transition: color 0.2s; }
+        .nav-link:hover { color: var(--corp-900); }
+        
+        .mobile-btn { display: flex; padding: 0.5rem; background: none; border: none; font-size: 1.5rem; color: var(--slate-600); cursor: pointer; }
+        @media (min-width: 768px) { .mobile-btn { display: none; } }
+        
+        .mobile-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); border-top: 1px solid var(--slate-100); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .mobile-menu.active { display: flex; animation: slideDown 0.3s ease-out forwards; }
+        .mobile-menu-link { padding: 1rem 1.5rem; border-bottom: 1px solid var(--slate-50); font-size: 0.875rem; font-weight: 500; color: var(--slate-600); }
+        .mobile-menu-link:hover { background-color: var(--slate-50); }
+        .mobile-menu-link.acc { color: var(--acc-600); }
+        
+        .hero { position: relative; background-color: var(--corp-900); color: var(--white); padding-top: 8rem; padding-bottom: 5rem; overflow: hidden; }
+        @media (min-width: 1024px) { .hero { padding-top: 12rem; padding-bottom: 8rem; } }
+        
+        .hero-pattern { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+        .hero-pattern svg { width: 100%; height: 100%; }
+        
+        .hero-glow-1 { position: absolute; top: -20%; left: -10%; width: 70%; height: 70%; border-radius: 50%; background-color: rgba(51, 78, 104, 0.3); filter: blur(120px); pointer-events: none; z-index: 0; }
+        .hero-glow-2 { position: absolute; bottom: -20%; right: -10%; width: 60%; height: 60%; border-radius: 50%; background-color: rgba(139, 51, 51, 0.15); filter: blur(120px); pointer-events: none; z-index: 0; }
+        
+        .hero-content { position: relative; z-index: 10; text-align: center; max-width: 56rem; margin: 0 auto; }
+        
+        .hero-badge { display: inline-block; padding: 0.375rem 1rem; border-radius: 9999px; background-color: rgba(255,255,255,0.1); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 0 15px rgba(255,255,255,0.2); text-shadow: 0 0 10px rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
+        
+        .hero-title { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 1.5rem; }
+        @media (min-width: 768px) { .hero-title { font-size: 3rem; } }
+        @media (min-width: 1024px) { .hero-title { font-size: 3.75rem; } }
+        
+        .text-gradient { background: linear-gradient(to right, var(--acc-500), var(--acc-400)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .desktop-only { display: none; }
+        @media (min-width: 768px) { .desktop-only { display: block; } }
+        
+        .hero-desc { font-size: 1.125rem; color: var(--slate-300); font-weight: 300; max-width: 48rem; margin-inline: auto; margin-bottom: 2.5rem; }
+        @media (min-width: 768px) { .hero-desc { font-size: 1.25rem; } }
+        
+        .hero-actions { display: flex; flex-direction: column; gap: 1rem; justify-content: center; }
+        @media (min-width: 640px) { .hero-actions { flex-direction: row; } }
+        
+        .about { background-color: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center; }
+        @media (min-width: 1024px) { .about-grid { grid-template-columns: 1fr 1fr; } }
+        
+        .about-text p { color: var(--slate-600); margin-bottom: 1.25rem; line-height: 1.625; }
+        
+        .mission-box { background-color: var(--corp-50); padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid var(--acc-500); margin-bottom: 1.5rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .mission-box h4 { color: var(--corp-900); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .mission-box p { font-style: italic; font-size: 0.875rem; color: var(--slate-700); margin-bottom: 0; }
+        @media (min-width: 768px) { .mission-box p { font-size: 1rem; } }
+        
+        .supporter-badge { display: flex; align-items: center; gap: 1rem; padding: 1rem; background-color: var(--white); border: 1px solid var(--slate-200); border-radius: 0.5rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+        .supporter-icon { width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: #fefce8; color: #eab308; display: flex; align-items: center; justify-content: center; border: 1px solid #fef08a; flex-shrink: 0; font-size: 1.125rem; }
+        .supporter-text h5 { font-size: 0.875rem; font-weight: 700; color: var(--corp-900); margin-bottom: 0.25rem; }
+        .supporter-text p { font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.125rem; }
+        
+        .stats-row { display: flex; align-items: center; gap: 2rem; }
+        .stat-item h3 { font-size: 1.875rem; color: var(--corp-900); line-height: 1; }
+        .stat-item p { font-size: 0.875rem; color: var(--slate-500); font-weight: 500; margin-top: 0.25rem; margin-bottom: 0; }
+        
+        .about-media { position: relative; }
+        .video-wrapper { border-radius: 0.5rem; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border: 1px solid var(--slate-100); background-color: var(--slate-100); min-height: 300px; display: flex; align-items: center; justify-content: center; }
+        .video-element { width: 100%; height: 100%; object-fit: cover; display: block; }
+        
+        .media-badge { position: absolute; bottom: -1.5rem; left: -1.5rem; background-color: var(--white); padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border: 1px solid var(--slate-100); display: none; align-items: center; gap: 1rem; }
+        @media (min-width: 768px) { .media-badge { display: flex; } }
+        .media-icon { background-color: var(--corp-50); padding: 0.75rem; border-radius: 9999px; color: var(--corp-900); font-size: 1.5rem; display: flex; }
+        .media-text h5 { color: var(--corp-900); font-weight: 700; margin-bottom: 0.125rem; }
+        .media-text p { font-size: 0.875rem; color: var(--slate-500); margin-bottom: 0; }
+        
+        .capabilities { background-color: var(--slate-50); border-top: 1px solid var(--slate-200); border-bottom: 1px solid var(--slate-200); }
+        .caps-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        @media (min-width: 768px) { .caps-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .caps-grid { grid-template-columns: repeat(3, 1fr); } }
+        
+        .cap-card { background-color: var(--white); padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border: 1px solid var(--slate-100); transition: box-shadow 0.3s; }
+        .cap-card:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .cap-icon { width: 3.5rem; height: 3.5rem; background-color: var(--corp-50); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: var(--corp-900); font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .cap-card h3 { font-size: 1.25rem; color: var(--corp-900); margin-bottom: 0.75rem; }
+        .cap-card p { font-size: 0.875rem; color: var(--slate-600); line-height: 1.625; }
+        
+        .portfolio { background-color: var(--white); }
+        .port-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+        @media (min-width: 1024px) { .port-grid { grid-template-columns: repeat(2, 1fr); } }
+        
+        .brand-card { display: flex; flex-direction: column; background-color: var(--white); border-radius: 1rem; border: 1px solid var(--slate-200); box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: all 0.3s; padding: 2rem; height: 100%; }
+        .brand-card:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
+        
+        .brand-header { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+        @media (min-width: 640px) { .brand-header { flex-direction: row; justify-content: space-between; align-items: center; } }
+        
+        .brand-title { display: flex; align-items: center; gap: 0.75rem; }
+        .brand-logo { width: 3rem; height: 3rem; object-fit: contain; border-radius: 0.25rem; }
+        .brand-title h3 { font-size: 1.5rem; color: var(--corp-900); }
+        
+        .brand-tag { font-size: 0.625rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; text-align: center; }
+        .tag-blue { background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+        .tag-pink { background-color: #fce7f3; color: #ff66a3; border: 1px solid #fbcfe8; }
+        
+        .brand-desc { color: var(--slate-600); margin-bottom: 2rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
+        .brand-desc p { font-size: 0.875rem; line-height: 1.625; }
+        
+        .brand-link { display: inline-flex; align-items: center; font-weight: 600; transition: color 0.2s, background-color 0.2s; justify-content: center; }
+        .link-blue { color: var(--corp-900); }
+        .link-blue:hover { color: var(--acc-500); }
+        
+        .link-pink { color: var(--white); background-color: #ff66a3; padding: 0.75rem; border-radius: 0.375rem; width: 100%; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .link-pink:hover { background-color: #e65c92; }
+        .brand-link i { margin-left: 0.5rem; font-size: 0.875rem; }
+        
+        .contact { background-color: var(--slate-900); color: var(--slate-100); }
+        .contact-card { background-color: var(--corp-900); border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); border: 1px solid var(--slate-700); display: grid; grid-template-columns: 1fr; }
+        @media (min-width: 1024px) { .contact-card { grid-template-columns: 4fr 8fr; } }
+        
+        .contact-info { padding: 2rem; display: flex; flex-direction: column; justify-content: flex-start; }
+        @media (min-width: 1024px) { .contact-info { padding: 3rem; } }
+        .contact-info h3 { font-size: 1.875rem; color: var(--white); margin-bottom: 1rem; }
+        .contact-info p { color: var(--slate-300); font-size: 0.875rem; line-height: 1.625; margin-bottom: 2.5rem; }
+        
+        .info-list { display: flex; flex-direction: column; gap: 1.5rem; }
+        .info-item { display: flex; align-items: flex-start; }
+        .info-icon { margin-top: 0.25rem; color: var(--acc-500); font-size: 1.25rem; width: 1.5rem; flex-shrink: 0; }
+        .info-text { margin-left: 1rem; color: var(--slate-300); }
+        .info-text h6 { color: var(--white); font-weight: 500; font-size: 1rem; margin-bottom: 0.25rem; }
+        .info-text span { display: block; font-size: 0.875rem; color: var(--slate-400); margin-top: 0.25rem; }
+        
+        .contact-form-wrap { background-color: var(--white); color: var(--slate-800); padding: 2rem; }
+        @media (min-width: 1024px) { .contact-form-wrap { padding: 3rem; } }
+        
+        .form-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
+        @media (min-width: 640px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+        
+        .form-group label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--slate-700); margin-bottom: 0.25rem; }
+        .required { color: var(--acc-500); }
+        .label-hint { font-weight: 400; color: var(--slate-500); font-size: 0.75rem; }
+        
+        .form-control { width: 100%; padding: 0.625rem 1rem; border-radius: 0.375rem; border: 1px solid var(--slate-300); font-size: 0.875rem; background-color: var(--white); transition: all 0.2s; outline: none; }
+        .form-control:focus { border-color: var(--corp-500); box-shadow: 0 0 0 2px rgba(51, 78, 104, 0.2); }
+        textarea.form-control { resize: vertical; min-height: 80px; }
+        
+        .b2b-box { background-color: var(--slate-50); padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--slate-100); margin-bottom: 1.5rem; }
+        
+        .checkbox-group { margin-bottom: 1.5rem; }
+        .checkbox-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+        @media (min-width: 640px) { .checkbox-grid { grid-template-columns: 1fr 1fr; } }
+        
+        .checkbox-label { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; }
+        .checkbox-input { appearance: none; width: 1rem; height: 1rem; border: 1px solid var(--slate-300); border-radius: 0.125rem; background-color: var(--white); cursor: pointer; transition: all 0.2s; display: grid; place-content: center; }
+        .checkbox-input::before { content: ""; width: 0.65em; height: 0.65em; transform: scale(0); transition: 120ms transform ease-in-out; box-shadow: inset 1em 1em var(--white); background-color: var(--white); transform-origin: center; clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%); }
+        .checkbox-input:checked { background-color: var(--acc-500); border-color: var(--acc-500); }
+        .checkbox-input:checked::before { transform: scale(1); }
+        .checkbox-text { font-size: 0.875rem; color: var(--slate-600); transition: color 0.2s; }
+        .checkbox-label:hover .checkbox-text { color: var(--corp-900); }
+        
+        .submit-btn { width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; background-color: var(--corp-900); color: var(--white); font-weight: 500; border-radius: 0.375rem; border: none; cursor: pointer; transition: background-color 0.3s; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-top: 1.5rem; font-size: 1rem; }
+        .submit-btn:hover { background-color: var(--corp-700); }
+        
+        .form-message { margin-top: 1rem; padding: 1rem; border-radius: 0.375rem; font-size: 0.875rem; display: flex; align-items: center; gap: 0.5rem; display: none; }
+        .form-message.success { background-color: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; display: flex; }
+        .form-message.error { background-color: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; display: flex; }
+        
+        .footer { background-color: var(--slate-950); padding-top: 4rem; padding-bottom: 2rem; border-top: 1px solid var(--slate-800); color: var(--slate-400); }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-bottom: 3rem; }
+        @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
+        
+        .footer-logo img { height: 6rem; width: auto; object-fit: contain; margin-bottom: 1.5rem; }
+        @media (min-width: 768px) { .footer-logo img { height: 8rem; } }
+        .footer-about { font-size: 0.875rem; line-height: 1.625; max-width: 24rem; }
+        
+        .footer-links h4 { color: var(--white); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a { font-size: 0.875rem; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-links a.hover-acc:hover { color: var(--acc-500); }
+        .footer-links a.hover-pink:hover { color: #ff66a3; }
+        
+        .footer-bottom { border-top: 1px solid var(--slate-800); padding-top: 2rem; display: flex; flex-direction: column; gap: 1rem; align-items: center; justify-content: space-between; font-size: 0.875rem; }
+        @media (min-width: 768px) { .footer-bottom { flex-direction: row; } }
+        .footer-legal { display: flex; gap: 1.5rem; }
+        .footer-legal a:hover { color: var(--white); }
+        
+        .fade-in-up { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s ease-out forwards; animation-play-state: paused; }
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
         .delay-300 { animation-delay: 300ms; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .mobile-menu-active {
-            display: flex !important;
-            animation: slideDown 0.3s ease-out forwards;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
         
-        /* Custom checkbox style */
-        input[type="checkbox"]:checked {
-            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
-            background-color: #8b3333;
-            border-color: #8b3333;
-        }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800">
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo-link">
+                <img src="MGGLogo.png" alt="MEG AND GREG GROUP LLC Logo" class="nav-logo-img" fetchpriority="high">
+            </a>
+            
+            <nav class="nav-links">
+                <a href="about_us.html" class="nav-link">About Us</a>
+                <a href="#capabilities" class="nav-link">Capabilities</a>
+                <a href="#portfolio" class="nav-link">Our Portfolio</a>
+                <a href="#contact" class="btn btn-sm btn-corp">Contact Us</a>
+            </nav>
 
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur shadow-sm" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo: Increased size significantly to fill header without expanding it -->
-                <div class="flex-shrink-0 flex items-center h-full py-1.5">
-                    <a href="#" class="flex items-center h-full">
-                        <img src="MGGLogo.png" alt="MEG AND GREG GROUP LLC Logo" fetchpriority="high" class="h-14 sm:h-[68px] w-auto object-contain">
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="about_us.html" class="text-sm font-medium text-slate-600 hover:text-corporate-900 transition">About Us</a>
-                    <a href="#capabilities" class="text-sm font-medium text-slate-600 hover:text-corporate-900 transition">Capabilities</a>
-                    <a href="#portfolio" class="text-sm font-medium text-slate-600 hover:text-corporate-900 transition">Our Portfolio</a>
-                    <a href="#contact" class="bg-corporate-900 text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-corporate-700 transition shadow-sm">Contact Us</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-corporate-900 focus:outline-none p-2">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
+            <button id="mobile-menu-btn" class="mobile-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
 
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden flex-col bg-white border-t border-slate-100 shadow-lg absolute w-full left-0">
-            <a href="about_us.html" class="px-6 py-4 text-sm font-medium border-b border-slate-50 text-slate-600 hover:bg-slate-50 mobile-link">About Us</a>
-            <a href="#capabilities" class="px-6 py-4 text-sm font-medium border-b border-slate-50 text-slate-600 hover:bg-slate-50 mobile-link">Capabilities</a>
-            <a href="#portfolio" class="px-6 py-4 text-sm font-medium border-b border-slate-50 text-slate-600 hover:bg-slate-50 mobile-link">Our Portfolio</a>
-            <a href="#contact" class="px-6 py-4 text-sm font-medium text-accent-600 hover:bg-slate-50 mobile-link">Contact Us</a>
-        </div>
-    </nav>
+        <nav id="mobile-menu" class="mobile-menu">
+            <a href="about_us.html" class="mobile-menu-link mobile-link">About Us</a>
+            <a href="#capabilities" class="mobile-menu-link mobile-link">Capabilities</a>
+            <a href="#portfolio" class="mobile-menu-link mobile-link">Our Portfolio</a>
+            <a href="#contact" class="mobile-menu-link acc mobile-link">Contact Us</a>
+        </nav>
+    </header>
 
-    <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-corporate-900 text-white">
-        <!-- Subtle Star Pattern Texture -->
-        <div class="absolute inset-0 z-0 pointer-events-none">
-            <svg class="absolute h-full w-full" aria-hidden="true">
+    <section id="hero" class="hero">
+        <div class="hero-pattern">
+            <svg aria-hidden="true">
                 <defs>
                     <pattern id="hero-star-pattern" width="36" height="36" patternUnits="userSpaceOnUse">
                         <path transform="translate(15, 15) scale(0.6)" d="M5 0L6.545 3.177L10 3.677L7.5 6.115L8.09 9.576L5 7.95L1.91 9.576L2.5 6.115L0 3.677L3.455 3.177Z" fill="rgba(255, 255, 255, 0.08)"></path>
@@ -137,387 +307,318 @@
             </svg>
         </div>
 
-        <!-- Soft Ambient Glow -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-            <div class="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-corporate-500/30 blur-[120px]"></div>
-            <div class="absolute bottom-[-20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-accent-500/15 blur-[120px]"></div>
-        </div>
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto fade-in-up">
-                <span class="inline-block py-1.5 px-4 rounded-full bg-white/10 text-white text-xs font-bold tracking-widest uppercase mb-6 border border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.2)] [text-shadow:0_0_10px_rgba(255,255,255,0.8)]">
-                  ♀ WOSB CERTIFIED ♀
-                </span>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                    Strategic Execution in <br class="hidden md:block" /> 
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-accent-400">DoD Logistics & Contracting</span>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge fade-in-up">WOSB CERTIFIED </span>
+                <h1 class="hero-title fade-in-up">
+                    Strategic Execution in <br class="desktop-only" /> 
+                    <span class="text-gradient">DoD Logistics & Contracting</span>
                 </h1>
-                <p class="mt-4 text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto font-light">
+                <p class="hero-desc fade-in-up">
                     MEG AND GREG GROUP LLC operates as a specialized DoD logistics broker and premier holding company, delivering robust operational excellence across government sectors and commercial brands.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#portfolio" class="bg-accent-500 text-white px-8 py-3.5 rounded-md font-medium hover:bg-accent-600 transition shadow-lg text-center">
-                        Explore Our Brands
-                    </a>
-                    <a href="#contact" class="bg-transparent border-2 border-white/30 text-white px-8 py-3.5 rounded-md font-medium hover:bg-white/10 transition text-center">
-                        Partner With Us
-                    </a>
+                <div class="hero-actions fade-in-up">
+                    <a href="#portfolio" class="btn btn-acc">Explore Our Brands</a>
+                    <a href="#contact" class="btn btn-outline">Partner With Us</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="fade-in-up delay-100">
-                    <h4 class="text-accent-500 font-semibold tracking-wide uppercase mb-2">About The Organization</h4>
-                    <h2 class="text-3xl md:text-4xl font-bold text-corporate-900 mb-6">Building Sustainable Value Across Sectors</h2>
-                    <p class="text-slate-600 mb-5 leading-relaxed">
-                        Operating at the intersection of public sector requirements and private sector innovation, <strong>MEG AND GREG GROUP LLC</strong> functions not only as a parent holding company but as a specialized <strong>DoD logistics broker and firm</strong>. 
-                    </p>
-                    <p class="text-slate-600 mb-6 leading-relaxed">
-                        As a registered federal contracting entity, we maintain the highest standards of compliance and efficiency. Simultaneously, we nurture and scale consumer-facing platforms that enrich lives and streamline commerce and supply chains.
-                    </p>
-                    
-                    <!-- New Mission Statement Block -->
-                    <div class="bg-corporate-50 p-6 rounded-lg border-l-4 border-accent-500 mb-6 shadow-sm">
-                        <h4 class="text-corporate-900 font-bold mb-2 flex items-center">
-                            <i class="fas fa-flag text-accent-500 mr-2"></i> Our Mission
-                        </h4>
-                        <p class="text-slate-700 italic text-sm md:text-base leading-relaxed">
-                            "Keeping manufacturing and jobs in America while partnering with other businesses to provide preferential hiring to veterans."
-                        </p>
-                    </div>
-
-                    <!-- Supporter Badge -->
-                    <div class="flex items-center gap-4 mb-8 p-4 bg-white border border-slate-200 rounded-lg shadow-sm">
-                        <div class="w-10 h-10 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-500 flex-shrink-0 border border-yellow-200">
-                            <i class="fas fa-ribbon text-lg"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm font-bold text-corporate-900">Proud Supporter & Fundraiser</p>
-                            <p class="text-sm text-slate-600 mt-1">&bull; Concerned Vets for America</p>
-                            <p class="text-sm text-slate-600 mt-0.5">&bull; Stop Soldier Suicide</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center gap-8">
-                        <div>
-                            <p class="text-3xl font-bold text-corporate-900">100%</p>
-                            <p class="text-sm text-slate-500 font-medium">Compliance Driven</p>
-                        </div>
-                        <div>
-                            <p class="text-3xl font-bold text-corporate-900">2</p>
-                            <p class="text-sm text-slate-500 font-medium">Flagship Brands</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="about" class="section about">
+        <div class="container about-grid">
+            <div class="about-text fade-in-up delay-100">
+                <h4 class="section-subtitle">About The Organization</h4>
+                <h2 class="section-title">Building Sustainable Value Across Sectors</h2>
+                <p>
+                    Operating at the intersection of public sector requirements and private sector innovation, <strong>MEG AND GREG GROUP LLC</strong> functions not only as a parent holding company but as a specialized <strong>DoD logistics broker and firm</strong>. 
+                </p>
+                <p>
+                    As a registered federal contracting entity, we maintain the highest standards of compliance and efficiency. Simultaneously, we nurture and scale consumer-facing platforms that enrich lives and streamline commerce and supply chains.
+                </p>
                 
-                <div class="relative fade-in-up delay-200">
-                    <video src="MGGVideo.mp4" autoplay loop muted playsinline class="rounded-lg shadow-xl border border-slate-100 w-full object-cover"></video>
-                    
-                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl border border-slate-100 hidden md:block">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-corporate-50 p-3 rounded-full text-corporate-900">
-                                <i class="fas fa-handshake text-2xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-bold text-corporate-900">Trusted Partner</p>
-                                <p class="text-sm text-slate-500">In B2B & B2G Sectors</p>
-                            </div>
-                        </div>
+                <div class="mission-box">
+                    <h4><i class="fas fa-flag"></i> Our Mission</h4>
+                    <p>"Keeping manufacturing and jobs in America while partnering with other businesses to provide preferential hiring to veterans."</p>
+                </div>
+
+                <div class="supporter-badge">
+                    <div class="supporter-icon"><i class="fas fa-ribbon"></i></div>
+                    <div class="supporter-text">
+                        <h5>Proud Supporter & Fundraiser</h5>
+                        <p>&bull; Concerned Vets for America</p>
+                        <p>&bull; Stop Soldier Suicide</p>
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Compliance Driven</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>2</h3>
+                        <p>Flagship Brands</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="capabilities" class="py-20 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                <h4 class="text-accent-500 font-semibold tracking-wide uppercase mb-2">Our Capabilities</h4>
-                <h2 class="text-3xl md:text-4xl font-bold text-corporate-900 mb-4">Comprehensive Enterprise Solutions</h2>
-                <p class="text-slate-600">Leveraging our holding structure to provide unparalleled agility and scale in both government contracting and commercial markets.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Cap 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow fade-in-up delay-100">
-                    <div class="w-14 h-14 bg-corporate-50 rounded-lg flex items-center justify-center text-corporate-900 mb-6">
-                        <i class="fas fa-file-contract text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-corporate-900 mb-3">Federal Contracting</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Registered and equipped to bid, manage, and execute complex federal contracts with strict adherence to procurement regulations.</p>
-                </div>
-
-                <!-- Cap 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow fade-in-up delay-200">
-                    <div class="w-14 h-14 bg-corporate-50 rounded-lg flex items-center justify-center text-corporate-900 mb-6">
-                        <i class="fas fa-truck-fast text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-corporate-900 mb-3">DoD Logistics Brokerage</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Serving as a specialized liaison optimizing supply chains, procurement, and resource distribution specifically for Department of Defense frameworks.</p>
-                </div>
-
-                <!-- Cap 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow fade-in-up delay-300">
-                    <div class="w-14 h-14 bg-corporate-50 rounded-lg flex items-center justify-center text-corporate-900 mb-6">
-                        <i class="fas fa-building text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-corporate-900 mb-3">Brand Portfolio Management</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Strategic oversight, capital allocation, and shared operational resources to incubate and scale our proprietary brands.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                <h4 class="text-accent-500 font-semibold tracking-wide uppercase mb-2">Our Portfolio</h4>
-                <h2 class="text-3xl md:text-4xl font-bold text-corporate-900 mb-4">Flagship Brands</h2>
-                <p class="text-slate-600">MEG AND GREG GROUP currently operates two primary brands, each serving distinct market needs while benefiting from our centralized holding structure.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            
+            <div class="about-media fade-in-up delay-200">
+                <!-- Video loading is deferred via JavaScript to prioritize page rendering -->
+                <div id="video-container" class="video-wrapper"></div>
                 
+                <div class="media-badge">
+                    <div class="media-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="media-text">
+                        <h5>Trusted Partner</h5>
+                        <p>In B2B & B2G Sectors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="capabilities" class="section capabilities">
+        <div class="container">
+            <div class="text-center fade-in-up">
+                <h4 class="section-subtitle">Our Capabilities</h4>
+                <h2 class="section-title">Comprehensive Enterprise Solutions</h2>
+                <p class="section-desc">Leveraging our holding structure to provide unparalleled agility and scale in both government contracting and commercial markets.</p>
+            </div>
+
+            <div class="caps-grid">
+                <div class="cap-card fade-in-up delay-100">
+                    <div class="cap-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3>Federal Contracting</h3>
+                    <p>Registered and equipped to bid, manage, and execute complex federal contracts with strict adherence to procurement regulations.</p>
+                </div>
+
+                <div class="cap-card fade-in-up delay-200">
+                    <div class="cap-icon"><i class="fas fa-truck-fast"></i></div>
+                    <h3>DoD Logistics Brokerage</h3>
+                    <p>Serving as a specialized liaison optimizing supply chains, procurement, and resource distribution specifically for Department of Defense frameworks.</p>
+                </div>
+
+                <div class="cap-card fade-in-up delay-300">
+                    <div class="cap-icon"><i class="fas fa-building"></i></div>
+                    <h3>Brand Portfolio Management</h3>
+                    <p>Strategic oversight, capital allocation, and shared operational resources to incubate and scale our proprietary brands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <div class="text-center fade-in-up">
+                <h4 class="section-subtitle">Our Portfolio</h4>
+                <h2 class="section-title">Flagship Brands</h2>
+                <p class="section-desc">MEG AND GREG GROUP currently operates two primary brands, each serving distinct market needs while benefiting from our centralized holding structure.</p>
+            </div>
+
+            <div class="port-grid">
                 <!-- Brand 1: Lodging Sources -->
-                <div class="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full fade-in-up delay-100">
-                    <div class="p-8 flex-1 flex flex-col bg-white z-10 relative">
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
-                            <div class="flex items-center gap-3">
-                                <!-- Lodging Sources Logo updated with provided filename -->
-                                <img src="LSLogo_light.png" alt="Lodging Sources Logo" loading="lazy" decoding="async" class="w-12 h-12 object-contain bg-transparent border-none rounded">
-                                <h3 class="text-2xl font-bold text-corporate-900">Lodging Sources</h3>
-                            </div>
-                            <span class="bg-blue-50 text-blue-700 text-[10px] font-bold px-3 py-1 rounded-full border border-blue-200 uppercase tracking-wider text-center">Government B2B/B2G Lodging</span>
+                <div class="brand-card fade-in-up delay-100">
+                    <div class="brand-header">
+                        <div class="brand-title">
+                            <img src="LSLogo_light.png" alt="Lodging Sources Logo" class="brand-logo" loading="lazy">
+                            <h3>Lodging Sources</h3>
                         </div>
-                        <div class="text-slate-600 mb-8 flex-1 space-y-3">
-                            <p class="text-sm leading-relaxed">
-                                A WOSB Certified Prime Contractor providing turnkey event, lodging, and catering logistics for the Federal Government. We connect the DoD with perfect event spaces and accommodations that strictly adhere to SOWs and GSA Per Diem requirements.
-                            </p>
-                            <p class="text-sm leading-relaxed">
-                                From <strong>YRRP events</strong> and <strong>VA medical lodging</strong> to rapid deployment of emergency housing blocks, we offer single-point-of-contact coordination. We handle Master Billing via WAWF and provide full on-site representation, acting as the primary liaison between military cadre and subcontractors.
-                            </p>
-                        </div>
-                        <a href="https://lodgingsources.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-corporate-900 font-semibold hover:text-accent-500 transition-colors">
-                            Visit Lodgingsources.com <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
+                        <span class="brand-tag tag-blue">Government B2B/B2G Lodging</span>
                     </div>
+                    <div class="brand-desc">
+                        <p>A WOSB Certified Prime Contractor providing turnkey event, lodging, and catering logistics for the Federal Government. We connect the DoD with perfect event spaces and accommodations that strictly adhere to SOWs and GSA Per Diem requirements.</p>
+                        <p>From <strong>YRRP events</strong> and <strong>VA medical lodging</strong> to rapid deployment of emergency housing blocks, we offer single-point-of-contact coordination. We handle Master Billing via WAWF and provide full on-site representation.</p>
+                    </div>
+                    <a href="https://lodgingsources.com" target="_blank" rel="noopener noreferrer" class="brand-link link-blue">
+                        Visit Lodgingsources.com <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
 
                 <!-- Brand 2: PINK PILLED -->
-                <div class="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full fade-in-up delay-200">
-                    <div class="p-8 flex-1 flex flex-col bg-white z-10 relative">
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
-                            <div class="flex items-center gap-3">
-                                <!-- PINK PILLED Logo updated with provided filename -->
-                                <img src="PINK PILLED Logo.png" alt="PINK PILLED Logo" loading="lazy" decoding="async" class="w-12 h-12 object-contain bg-transparent border-none rounded">
-                                <h3 class="text-2xl font-bold text-corporate-900">PINK PILLED&trade;</h3>
-                            </div>
-                            <span class="bg-pink-100 text-[#ff66a3] text-[10px] font-bold px-3 py-1 rounded-full border border-pink-200 uppercase tracking-wider text-center">Health Sciences R&D</span>
+                <div class="brand-card fade-in-up delay-200">
+                    <div class="brand-header">
+                        <div class="brand-title">
+                            <img src="PINK PILLED Logo.png" alt="PINK PILLED Logo" class="brand-logo" loading="lazy">
+                            <h3>PINK PILLED&trade;</h3>
                         </div>
-                        <div class="text-slate-600 mb-8 flex-1 space-y-3">
-                            <p class="text-sm leading-relaxed">
-                                A highly capable Prime Contractor navigating complex solicitations across the DoD, NIH, and DHA. We specialize in <strong>Bioinformatics & Biosurveillance</strong>, architecting genomic data pipelines and biological threat models.
-                            </p>
-                            <p class="text-sm leading-relaxed">
-                                Through strategic <strong>Scouting & Discovery</strong>, we identify disruptive commercial technologies from non-traditional creators and transition their innovations into the hands of the warfighter to maintain asymmetric advantage.
-                            </p>
-                        </div>
-                        <a href="https://pinkpilled.life" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full bg-[#ff66a3] text-white font-semibold py-3 rounded-md hover:bg-[#e65c92] transition-colors shadow-sm">
-                            Visit Pinkpilled.life <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
+                        <span class="brand-tag tag-pink">Health Sciences R&D</span>
                     </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-slate-900 text-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-corporate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700 fade-in-up">
-                <div class="grid grid-cols-1 lg:grid-cols-12">
-                    
-                    <!-- Contact Info Sidebar -->
-                    <div class="p-8 lg:p-12 lg:col-span-4 bg-corporate-900 flex flex-col justify-start">
-                        <h3 class="text-3xl font-bold text-white mb-4">Get in Touch</h3>
-                        <p class="text-slate-300 mb-10 text-sm leading-relaxed">Whether you are an agency seeking a reliable contracting partner, inquiring about a teaming agreement, or exploring our logistics brokerage services, we are ready to connect.</p>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <i class="fas fa-map-marker-alt text-accent-500 text-xl w-6"></i>
-                                </div>
-                                <div class="ml-4 text-slate-300">
-                                    <p class="font-medium text-white">Headquarters</p>
-                                    <p class="text-sm mt-1">Chillicothe, Ohio</p>
-                                    <p class="text-sm mt-1 text-slate-400">United States</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <i class="fas fa-envelope text-accent-500 text-xl w-6"></i>
-                                </div>
-                                <div class="ml-4 text-slate-300">
-                                    <p class="font-medium text-white">General Inquiries</p>
-                                    <p class="text-sm mt-1">contact@megandgreg.us</p> 
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <i class="fas fa-shield-halved text-accent-500 text-xl w-6"></i>
-                                </div>
-                                <div class="ml-4 text-slate-300">
-                                    <p class="font-medium text-white">B2B / B2G Operations</p>
-                                    <p class="text-sm mt-1">SAM.gov Registered</p> 
-                                </div>
-                            </div>
-                        </div>
+                    <div class="brand-desc">
+                        <p>A highly capable Prime Contractor navigating complex solicitations across the DoD, NIH, and DHA. We specialize in <strong>Bioinformatics & Biosurveillance</strong>, architecting genomic data pipelines and biological threat models.</p>
+                        <p>Through strategic <strong>Scouting & Discovery</strong>, we identify disruptive commercial technologies from non-traditional creators and transition their innovations into the hands of the warfighter to maintain asymmetric advantage.</p>
                     </div>
-
-                    <!-- Comprehensive Contact Form -->
-                    <div class="p-8 lg:p-12 lg:col-span-8 bg-white text-slate-800">
-                        <form id="contactForm" class="space-y-6">
-                            
-                            <!-- Basic Information Grid -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label for="name" class="block text-sm font-semibold text-slate-700 mb-1">Full Name <span class="text-accent-500">*</span></label>
-                                    <input type="text" id="name" name="name" required class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="Jane Doe">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-semibold text-slate-700 mb-1">Email Address <span class="text-accent-500">*</span></label>
-                                    <input type="email" id="email" name="email" required class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="jane@example.com">
-                                </div>
-                                <div>
-                                    <label for="company" class="block text-sm font-semibold text-slate-700 mb-1">Company / Organization <span class="text-accent-500">*</span></label>
-                                    <input type="text" id="company" name="company" required class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="Company Name">
-                                </div>
-                                <div>
-                                    <label for="phone" class="block text-sm font-semibold text-slate-700 mb-1">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="(555) 123-4567">
-                                </div>
-                            </div>
-
-                            <!-- B2B / B2G Identifiers -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 bg-slate-50 p-4 rounded-lg border border-slate-100">
-                                <div>
-                                    <label for="uei" class="block text-sm font-semibold text-slate-700 mb-1">UEI <span class="text-xs font-normal text-slate-500">(If applicable for B2B/B2G)</span></label>
-                                    <input type="text" id="uei" name="uei" class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="12-character alphanumeric">
-                                </div>
-                                <div>
-                                    <label for="cage" class="block text-sm font-semibold text-slate-700 mb-1">CAGE Code <span class="text-xs font-normal text-slate-500">(If applicable)</span></label>
-                                    <input type="text" id="cage" name="cage" class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="5-character code">
-                                </div>
-                            </div>
-
-                            <!-- Inquiry Type Checkboxes -->
-                            <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-3">Nature of Inquiry (Select all that apply) <span class="text-accent-500">*</span></label>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <label class="flex items-center space-x-3 cursor-pointer group">
-                                        <input type="checkbox" name="inquiry_type" value="dod_logistics" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
-                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">DoD Logistics Brokerage</span>
-                                    </label>
-                                    <label class="flex items-center space-x-3 cursor-pointer group">
-                                        <input type="checkbox" name="inquiry_type" value="teaming" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
-                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Teaming Agreement / Partnership</span>
-                                    </label>
-                                    <label class="flex items-center space-x-3 cursor-pointer group">
-                                        <input type="checkbox" name="inquiry_type" value="federal_contracting" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
-                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Federal Contracting Services</span>
-                                    </label>
-                                    <label class="flex items-center space-x-3 cursor-pointer group">
-                                        <input type="checkbox" name="inquiry_type" value="veteran_hiring" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
-                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Veteran Preferential Hiring Init.</span>
-                                    </label>
-                                    <label class="flex items-center space-x-3 cursor-pointer group">
-                                        <input type="checkbox" name="inquiry_type" value="portfolio_brands" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
-                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Portfolio Brands (LS or Pink Pilled)</span>
-                                    </label>
-                                    <label class="flex items-center space-x-3 cursor-pointer group">
-                                        <input type="checkbox" name="inquiry_type" value="other" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
-                                        <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Other Request</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <!-- Specific Details Textarea -->
-                            <div>
-                                <label for="details" class="block text-sm font-semibold text-slate-700 mb-1">Additional Context</label>
-                                <textarea id="details" name="details" rows="3" class="w-full px-4 py-3 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all resize-none" placeholder="Provide any necessary context, solicitation numbers, or specific requirements here..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="w-full bg-corporate-900 text-white font-medium py-3 px-4 rounded-md hover:bg-corporate-700 transition duration-300 shadow-md flex justify-center items-center">
-                                <span>Submit Secure Inquiry</span>
-                                <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-                        </form>
-                        
-                        <!-- Form Success Message (Hidden by default) -->
-                        <div id="form-success" class="hidden mt-4 p-4 bg-green-50 text-green-700 rounded-md border border-green-200 text-sm flex items-center">
-                            <i class="fas fa-check-circle mr-2 text-lg"></i>
-                            Thank you. Your detailed inquiry has been received securely.
-                        </div>
-                        <!-- Form Error Message (Hidden by default) -->
-                        <div id="form-error" class="hidden mt-4 p-4 bg-red-50 text-red-700 rounded-md border border-red-200 text-sm flex items-center">
-                            <i class="fas fa-exclamation-triangle mr-2 text-lg"></i>
-                            Please select at least one Nature of Inquiry option before submitting.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800 text-slate-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                
-                <div class="col-span-1 md:col-span-1">
-                    <a href="#" class="block mb-6">
-                        <!-- Logo: Significantly increased size for prominence -->
-                        <img src="MGGLogodark.png" alt="MEG AND GREG GROUP LLC Logo" loading="lazy" decoding="async" class="h-24 md:h-32 w-auto object-contain">
+                    <a href="https://pinkpilled.life" target="_blank" rel="noopener noreferrer" class="brand-link link-pink">
+                        Visit Pinkpilled.life <i class="fas fa-arrow-right"></i>
                     </a>
-                    <p class="text-sm leading-relaxed mb-6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="contact-card fade-in-up">
+                
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Whether you are an agency seeking a reliable contracting partner, inquiring about a teaming agreement, or exploring our logistics brokerage services, we are ready to connect.</p>
+                    
+                    <div class="info-list">
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-text">
+                                <h6>Headquarters</h6>
+                                <span>Chillicothe, Ohio<br>United States</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-text">
+                                <h6>General Inquiries</h6>
+                                <span>contact@megandgreg.us</span> 
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-shield-halved"></i></div>
+                            <div class="info-text">
+                                <h6>B2B / B2G Operations</h6>
+                                <span>SAM.gov Registered</span> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrap">
+                    <form id="contactForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required class="form-control" placeholder="Jane Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required class="form-control" placeholder="jane@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company / Organization <span class="required">*</span></label>
+                                <input type="text" id="company" name="company" required class="form-control" placeholder="Company Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 123-4567">
+                            </div>
+                        </div>
+
+                        <div class="form-grid b2b-box">
+                            <div class="form-group">
+                                <label for="uei">UEI <span class="label-hint">(If applicable)</span></label>
+                                <input type="text" id="uei" name="uei" class="form-control" placeholder="12-character alphanumeric">
+                            </div>
+                            <div class="form-group">
+                                <label for="cage">CAGE Code <span class="label-hint">(If applicable)</span></label>
+                                <input type="text" id="cage" name="cage" class="form-control" placeholder="5-character code">
+                            </div>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>Nature of Inquiry (Select all that apply) <span class="required">*</span></label>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="inquiry_type" value="dod_logistics" class="checkbox-input">
+                                    <span class="checkbox-text">DoD Logistics Brokerage</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="inquiry_type" value="teaming" class="checkbox-input">
+                                    <span class="checkbox-text">Teaming Agreement</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="inquiry_type" value="federal_contracting" class="checkbox-input">
+                                    <span class="checkbox-text">Federal Contracting Services</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="inquiry_type" value="veteran_hiring" class="checkbox-input">
+                                    <span class="checkbox-text">Veteran Preferential Hiring</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="inquiry_type" value="portfolio_brands" class="checkbox-input">
+                                    <span class="checkbox-text">Portfolio Brands</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="inquiry_type" value="other" class="checkbox-input">
+                                    <span class="checkbox-text">Other Request</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="details">Additional Context</label>
+                            <textarea id="details" name="details" class="form-control" placeholder="Provide context, solicitation numbers, or specific requirements here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span>Submit Secure Inquiry</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    
+                    <div id="form-success" class="form-message success">
+                        <i class="fas fa-check-circle"></i> Thank you. Your detailed inquiry has been received securely.
+                    </div>
+                    <div id="form-error" class="form-message error">
+                        <i class="fas fa-exclamation-triangle"></i> Please select at least one Nature of Inquiry option before submitting.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">
+                        <img src="MGGLogodark.png" alt="MEG AND GREG GROUP LLC Logo" loading="lazy">
+                    </a>
+                    <p class="footer-about">
                         A registered holding company specializing in federal contracting, DoD logistics brokerage, and scalable operations focused on domestic manufacturing and veteran hiring.
                     </p>
                 </div>
                 
-                <div>
-                    <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Portfolio</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="https://lodgingsources.com" target="_blank" class="block py-1 hover:text-accent-500 transition-colors">Lodging Sources</a></li>
-                        <li><a href="https://pinkpilled.life" target="_blank" class="block py-1 hover:text-[#ff66a3] transition-colors">PINK PILLED&trade;</a></li>
+                <div class="footer-links">
+                    <h4>Portfolio</h4>
+                    <ul>
+                        <li><a href="https://lodgingsources.com" target="_blank" class="hover-acc">Lodging Sources</a></li>
+                        <li><a href="https://pinkpilled.life" target="_blank" class="hover-pink">PINK PILLED&trade;</a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Company</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="about_us.html" class="block py-1 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#capabilities" class="block py-1 hover:text-white transition-colors">Capabilities</a></li>
-                        <li><a href="#contact" class="block py-1 hover:text-white transition-colors">Contact</a></li>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="#capabilities">Capabilities</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm">&copy; <span id="year"></span> MEG AND GREG GROUP LLC. All rights reserved.</p>
-                <div class="flex space-x-6 text-sm">
-                    <a href="privacy_policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> MEG AND GREG GROUP LLC. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        
-        // Set current year in footer
+        // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // Mobile Menu Toggle
@@ -527,97 +628,78 @@
         const icon = btn.querySelector('i');
 
         function toggleMenu() {
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('mobile-menu-active');
-            
-            if (menu.classList.contains('hidden')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
+            menu.classList.toggle('active');
+            if (menu.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
         }
 
         btn.addEventListener('click', toggleMenu);
 
-        // Close mobile menu on link click
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (!menu.classList.contains('hidden')) {
-                    toggleMenu();
-                }
+                if (menu.classList.contains('active')) toggleMenu();
             });
         });
 
-        // Navbar scroll effect
+        // Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
-                navbar.classList.add('shadow-md');
-                navbar.classList.remove('shadow-sm');
+                navbar.classList.add('scrolled');
             } else {
-                navbar.classList.remove('shadow-md');
-                navbar.classList.add('shadow-sm');
+                navbar.classList.remove('scrolled');
             }
         });
 
-        // Form Validation and Submission Handler
+        // Form Submission Logic
         const contactForm = document.getElementById('contactForm');
         const formSuccess = document.getElementById('form-success');
         const formError = document.getElementById('form-error');
 
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Check if at least one checkbox is checked
             const checkboxes = document.querySelectorAll('input[name="inquiry_type"]:checked');
+            
             if (checkboxes.length === 0) {
-                formError.classList.remove('hidden');
-                formSuccess.classList.add('hidden');
-                
-                // Hide error after 5 seconds
-                setTimeout(() => {
-                    formError.classList.add('hidden');
-                }, 5000);
-                return; // Stop form submission
+                formError.style.display = 'flex';
+                formSuccess.style.display = 'none';
+                setTimeout(() => formError.style.display = 'none', 5000);
+                return; 
             }
             
-            // If validation passes, hide error (if any) and show success
-            formError.classList.add('hidden');
-            
-            // In a real scenario, you would handle the fetch/XHR request to your backend here.
-            
-            // Show success message and reset form for UI demonstration
+            formError.style.display = 'none';
             contactForm.reset();
-            formSuccess.classList.remove('hidden');
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                formSuccess.classList.add('hidden');
-            }, 5000);
+            formSuccess.style.display = 'flex';
+            setTimeout(() => formSuccess.style.display = 'none', 5000);
         });
 
-        // Simple Intersection Observer for scroll animations (fade-in-up)
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.animationPlayState = 'running';
-                    observer.unobserve(entry.target);
+                    obs.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        // Pause animations initially so they play only when scrolled into view
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            el.style.animationPlayState = 'paused';
-            observer.observe(el);
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        // ABSOLUTE PERFORMANCE HACK: Defer heavy video rendering
+        // The mobile device will build and display the entire text/design of the site FIRST,
+        // and only inject the heavy MP4 video element 250 milliseconds after it finishes.
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const videoContainer = document.getElementById('video-container');
+                if(videoContainer) {
+                    videoContainer.innerHTML = '<video src="MGGVideo.mp4" autoplay loop muted playsinline class="video-element"></video>';
+                }
+            }, 250); 
         });
 
     </script>
