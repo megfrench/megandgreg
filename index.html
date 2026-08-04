@@ -6,17 +6,16 @@
     <meta name="description" content="MEG AND GREG GROUP LLC - Federal Contracting, DoD Logistics Broker, and Brand Management">
     <title>MEG AND GREG GROUP LLC | Federal Contracting & Logistics</title>
 
-    <!-- Google Fonts: Preconnected for faster DNS resolution -->
+    <!-- Google Fonts: Inter for a clean, corporate look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome: Optimized for non-blocking render (loads asynchronously) -->
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS (Cloudflare Rocket Loader Fix Applied) -->
-    <script data-cfasync="false" src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom Tailwind Config & CSS -->
     <script>
@@ -51,12 +50,10 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* Hardware accelerated animations */
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
             transform: translateY(20px);
-            will-change: opacity, transform;
         }
 
         .delay-100 { animation-delay: 100ms; }
@@ -94,11 +91,10 @@
     <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur shadow-sm" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
+                <!-- Logo: Increased size significantly to fill header without expanding it -->
                 <div class="flex-shrink-0 flex items-center h-full py-1.5">
                     <a href="#" class="flex items-center h-full">
-                        <!-- Added decoding="async" for smoother rendering -->
-                        <img src="MGGLogo.png" alt="MEG AND GREG GROUP LLC Logo" decoding="async" class="h-14 sm:h-[68px] w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/300x100/102a43/ffffff?text=MGG+LLC';">
+                        <img src="MGGLogo.png" alt="MEG AND GREG GROUP LLC Logo" class="h-14 sm:h-[68px] w-auto object-contain">
                     </a>
                 </div>
                 
@@ -110,9 +106,9 @@
                     <a href="#contact" class="bg-corporate-900 text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-corporate-700 transition shadow-sm">Contact Us</a>
                 </div>
 
-                <!-- Mobile Menu Button (Optimized hit area for touch) -->
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" aria-label="Toggle mobile menu" class="text-slate-600 hover:text-corporate-900 focus:outline-none p-3 -mr-3">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-corporate-900 focus:outline-none p-2">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -159,12 +155,11 @@
                 <p class="mt-4 text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto font-light">
                     MEG AND GREG GROUP LLC operates as a specialized DoD logistics broker and premier holding company, delivering robust operational excellence across government sectors and commercial brands.
                 </p>
-                <!-- Touch-friendly button targets -->
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#portfolio" class="bg-accent-500 text-white px-8 py-4 sm:py-3.5 rounded-md font-medium hover:bg-accent-600 transition shadow-lg text-center">
+                    <a href="#portfolio" class="bg-accent-500 text-white px-8 py-3.5 rounded-md font-medium hover:bg-accent-600 transition shadow-lg text-center">
                         Explore Our Brands
                     </a>
-                    <a href="#contact" class="bg-transparent border-2 border-white/30 text-white px-8 py-4 sm:py-3.5 rounded-md font-medium hover:bg-white/10 transition text-center">
+                    <a href="#contact" class="bg-transparent border-2 border-white/30 text-white px-8 py-3.5 rounded-md font-medium hover:bg-white/10 transition text-center">
                         Partner With Us
                     </a>
                 </div>
@@ -220,8 +215,9 @@
                 </div>
                 
                 <div class="relative fade-in-up delay-200">
-                    <!-- OPTIMIZATION: Added poster attribute to show image instantly while video buffers. Prevents layout shift and blank screen on mobile. -->
-                    <video poster="https://placehold.co/800x600/334e68/ffffff?text=MEG+AND+GREG+GROUP+Video" src="MGGVideo.mp4" autoplay loop muted playsinline class="rounded-lg shadow-xl border border-slate-100 w-full object-cover"></video>
+                    <!-- Changed video tag to image tag referencing the provided gif file -->
+                    <img src="MGGVideo (1).jpg" alt="Animated Flag Graphic" class="rounded-lg shadow-xl border border-slate-100 w-full object-cover">
+                    
                     <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl border border-slate-100 hidden md:block">
                         <div class="flex items-center gap-4">
                             <div class="bg-corporate-50 p-3 rounded-full text-corporate-900">
@@ -292,8 +288,8 @@
                     <div class="p-8 flex-1 flex flex-col bg-white z-10 relative">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
                             <div class="flex items-center gap-3">
-                                <!-- OPTIMIZATION: Added loading="lazy", decoding="async", and explicit width/height -->
-                                <img src="LSLogo_Light.png" alt="Lodging Sources Logo" loading="lazy" decoding="async" width="48" height="48" class="w-12 h-12 object-contain bg-transparent border-none rounded" onerror="this.onerror=null; this.src='https://placehold.co/48x48/f0f4f8/334e68?text=LS';">
+                                <!-- Lodging Sources Logo updated with provided filename -->
+                                <img src="LSLogo_light.png" alt="Lodging Sources Logo" class="w-12 h-12 object-contain bg-transparent border-none rounded">
                                 <h3 class="text-2xl font-bold text-corporate-900">Lodging Sources</h3>
                             </div>
                             <span class="bg-blue-50 text-blue-700 text-[10px] font-bold px-3 py-1 rounded-full border border-blue-200 uppercase tracking-wider text-center">Government B2B/B2G Lodging</span>
@@ -306,7 +302,7 @@
                                 From <strong>YRRP events</strong> and <strong>VA medical lodging</strong> to rapid deployment of emergency housing blocks, we offer single-point-of-contact coordination. We handle Master Billing via WAWF and provide full on-site representation, acting as the primary liaison between military cadre and subcontractors.
                             </p>
                         </div>
-                        <a href="https://lodgingsources.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-corporate-900 font-semibold hover:text-accent-500 transition-colors p-2 -ml-2">
+                        <a href="https://lodgingsources.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-corporate-900 font-semibold hover:text-accent-500 transition-colors">
                             Visit Lodgingsources.com <i class="fas fa-arrow-right ml-2 text-sm"></i>
                         </a>
                     </div>
@@ -317,8 +313,8 @@
                     <div class="p-8 flex-1 flex flex-col bg-white z-10 relative">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
                             <div class="flex items-center gap-3">
-                                <!-- OPTIMIZATION: Added loading="lazy", decoding="async", and explicit width/height -->
-                                <img src="PINK PILLED Logo.png" alt="PINK PILLED Logo" loading="lazy" decoding="async" width="48" height="48" class="w-12 h-12 object-contain bg-transparent border-none rounded" onerror="this.onerror=null; this.src='https://placehold.co/48x48/f0f4f8/ff66a3?text=PP';">
+                                <!-- PINK PILLED Logo updated with provided filename -->
+                                <img src="PINK PILLED Logo.png" alt="PINK PILLED Logo" class="w-12 h-12 object-contain bg-transparent border-none rounded">
                                 <h3 class="text-2xl font-bold text-corporate-900">PINK PILLED&trade;</h3>
                             </div>
                             <span class="bg-pink-100 text-[#ff66a3] text-[10px] font-bold px-3 py-1 rounded-full border border-pink-200 uppercase tracking-wider text-center">Health Sciences R&D</span>
@@ -331,7 +327,7 @@
                                 Through strategic <strong>Scouting & Discovery</strong>, we identify disruptive commercial technologies from non-traditional creators and transition their innovations into the hands of the warfighter to maintain asymmetric advantage.
                             </p>
                         </div>
-                        <a href="https://pinkpilled.life" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full bg-[#ff66a3] text-white font-semibold py-4 sm:py-3 rounded-md hover:bg-[#e65c92] transition-colors shadow-sm">
+                        <a href="https://pinkpilled.life" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full bg-[#ff66a3] text-white font-semibold py-3 rounded-md hover:bg-[#e65c92] transition-colors shadow-sm">
                             Visit Pinkpilled.life <i class="fas fa-arrow-right ml-2 text-sm"></i>
                         </a>
                     </div>
@@ -391,19 +387,19 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 <div>
                                     <label for="name" class="block text-sm font-semibold text-slate-700 mb-1">Full Name <span class="text-accent-500">*</span></label>
-                                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 sm:py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="Jane Doe">
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="Jane Doe">
                                 </div>
                                 <div>
                                     <label for="email" class="block text-sm font-semibold text-slate-700 mb-1">Email Address <span class="text-accent-500">*</span></label>
-                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 sm:py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="jane@example.com">
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="jane@example.com">
                                 </div>
                                 <div>
                                     <label for="company" class="block text-sm font-semibold text-slate-700 mb-1">Company / Organization <span class="text-accent-500">*</span></label>
-                                    <input type="text" id="company" name="company" required class="w-full px-4 py-3 sm:py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="Company Name">
+                                    <input type="text" id="company" name="company" required class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="Company Name">
                                 </div>
                                 <div>
                                     <label for="phone" class="block text-sm font-semibold text-slate-700 mb-1">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 sm:py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="(555) 123-4567">
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="(555) 123-4567">
                                 </div>
                             </div>
 
@@ -411,40 +407,40 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 bg-slate-50 p-4 rounded-lg border border-slate-100">
                                 <div>
                                     <label for="uei" class="block text-sm font-semibold text-slate-700 mb-1">UEI <span class="text-xs font-normal text-slate-500">(If applicable for B2B/B2G)</span></label>
-                                    <input type="text" id="uei" name="uei" class="w-full px-4 py-3 sm:py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="12-character alphanumeric">
+                                    <input type="text" id="uei" name="uei" class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="12-character alphanumeric">
                                 </div>
                                 <div>
                                     <label for="cage" class="block text-sm font-semibold text-slate-700 mb-1">CAGE Code <span class="text-xs font-normal text-slate-500">(If applicable)</span></label>
-                                    <input type="text" id="cage" name="cage" class="w-full px-4 py-3 sm:py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="5-character code">
+                                    <input type="text" id="cage" name="cage" class="w-full px-4 py-2.5 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all" placeholder="5-character code">
                                 </div>
                             </div>
 
                             <!-- Inquiry Type Checkboxes -->
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700 mb-3">Nature of Inquiry (Select all that apply) <span class="text-accent-500">*</span></label>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-3">
-                                    <label class="flex items-center space-x-3 cursor-pointer group p-1 -ml-1">
-                                        <input type="checkbox" name="inquiry_type" value="dod_logistics" class="h-5 w-5 sm:h-4 sm:w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="dod_logistics" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
                                         <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">DoD Logistics Brokerage</span>
                                     </label>
-                                    <label class="flex items-center space-x-3 cursor-pointer group p-1 -ml-1">
-                                        <input type="checkbox" name="inquiry_type" value="teaming" class="h-5 w-5 sm:h-4 sm:w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="teaming" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
                                         <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Teaming Agreement / Partnership</span>
                                     </label>
-                                    <label class="flex items-center space-x-3 cursor-pointer group p-1 -ml-1">
-                                        <input type="checkbox" name="inquiry_type" value="federal_contracting" class="h-5 w-5 sm:h-4 sm:w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="federal_contracting" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
                                         <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Federal Contracting Services</span>
                                     </label>
-                                    <label class="flex items-center space-x-3 cursor-pointer group p-1 -ml-1">
-                                        <input type="checkbox" name="inquiry_type" value="veteran_hiring" class="h-5 w-5 sm:h-4 sm:w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="veteran_hiring" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
                                         <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Veteran Preferential Hiring Init.</span>
                                     </label>
-                                    <label class="flex items-center space-x-3 cursor-pointer group p-1 -ml-1">
-                                        <input type="checkbox" name="inquiry_type" value="portfolio_brands" class="h-5 w-5 sm:h-4 sm:w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="portfolio_brands" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
                                         <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Portfolio Brands (LS or Pink Pilled)</span>
                                     </label>
-                                    <label class="flex items-center space-x-3 cursor-pointer group p-1 -ml-1">
-                                        <input type="checkbox" name="inquiry_type" value="other" class="h-5 w-5 sm:h-4 sm:w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
+                                    <label class="flex items-center space-x-3 cursor-pointer group">
+                                        <input type="checkbox" name="inquiry_type" value="other" class="h-4 w-4 appearance-none border border-slate-300 rounded-sm bg-white checked:bg-accent-500 checked:border-accent-500 transition-colors">
                                         <span class="text-sm text-slate-600 group-hover:text-corporate-900 transition-colors">Other Request</span>
                                     </label>
                                 </div>
@@ -456,7 +452,7 @@
                                 <textarea id="details" name="details" rows="3" class="w-full px-4 py-3 text-sm rounded-md border border-slate-300 focus:ring-2 focus:ring-corporate-500 focus:border-corporate-500 outline-none transition-all resize-none" placeholder="Provide any necessary context, solicitation numbers, or specific requirements here..."></textarea>
                             </div>
                             
-                            <button type="submit" class="w-full bg-corporate-900 text-white font-medium py-4 sm:py-3 px-4 rounded-md hover:bg-corporate-700 transition duration-300 shadow-md flex justify-center items-center">
+                            <button type="submit" class="w-full bg-corporate-900 text-white font-medium py-3 px-4 rounded-md hover:bg-corporate-700 transition duration-300 shadow-md flex justify-center items-center">
                                 <span>Submit Secure Inquiry</span>
                                 <i class="fas fa-paper-plane ml-2"></i>
                             </button>
@@ -484,8 +480,8 @@
                 
                 <div class="col-span-1 md:col-span-1">
                     <a href="#" class="block mb-6">
-                        <!-- OPTIMIZATION: Added loading="lazy" and decoding="async" for offscreen footer image -->
-                        <img src="MGGLogodark.png" alt="MEG AND GREG GROUP LLC Logo" loading="lazy" decoding="async" class="h-24 md:h-32 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/300x150/020617/ffffff?text=MGG+LLC';">
+                        <!-- Logo: Significantly increased size for prominence -->
+                        <img src="MGGLogodark.png" alt="MEG AND GREG GROUP LLC Logo" class="h-24 md:h-32 w-auto object-contain">
                     </a>
                     <p class="text-sm leading-relaxed mb-6">
                         A registered holding company specializing in federal contracting, DoD logistics brokerage, and scalable operations focused on domestic manufacturing and veteran hiring.
@@ -495,26 +491,26 @@
                 <div>
                     <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Portfolio</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="https://lodgingsources.com" target="_blank" class="block py-2 sm:py-1 hover:text-accent-500 transition-colors">Lodging Sources</a></li>
-                        <li><a href="https://pinkpilled.life" target="_blank" class="block py-2 sm:py-1 hover:text-[#ff66a3] transition-colors">PINK PILLED&trade;</a></li>
+                        <li><a href="https://lodgingsources.com" target="_blank" class="block py-1 hover:text-accent-500 transition-colors">Lodging Sources</a></li>
+                        <li><a href="https://pinkpilled.life" target="_blank" class="block py-1 hover:text-[#ff66a3] transition-colors">PINK PILLED&trade;</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Company</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="about_us.html" class="block py-2 sm:py-1 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#capabilities" class="block py-2 sm:py-1 hover:text-white transition-colors">Capabilities</a></li>
-                        <li><a href="#contact" class="block py-2 sm:py-1 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="about_us.html" class="block py-1 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#capabilities" class="block py-1 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="#contact" class="block py-1 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-sm">&copy; <span id="year"></span> MEG AND GREG GROUP LLC. All rights reserved.</p>
-                <div class="flex flex-wrap justify-center space-x-6 text-sm">
-                    <a href="privacy_policy.html" class="hover:text-white transition-colors py-2 md:py-0">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors py-2 md:py-0">Terms of Service</a>
+                <div class="flex space-x-6 text-sm">
+                    <a href="privacy_policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -557,21 +553,13 @@
 
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
-        // Throttle scroll event for better mobile performance
-        let isScrolling = false;
         window.addEventListener('scroll', () => {
-            if (!isScrolling) {
-                window.requestAnimationFrame(() => {
-                    if (window.scrollY > 20) {
-                        navbar.classList.add('shadow-md');
-                        navbar.classList.remove('shadow-sm');
-                    } else {
-                        navbar.classList.remove('shadow-md');
-                        navbar.classList.add('shadow-sm');
-                    }
-                    isScrolling = false;
-                });
-                isScrolling = true;
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
             }
         });
 
@@ -612,11 +600,10 @@
         });
 
         // Simple Intersection Observer for scroll animations (fade-in-up)
-        // Optimized for mobile by reducing the number of observed elements and threshold
         const observerOptions = {
             root: null,
-            rootMargin: '50px', // Trigger slightly before it comes into view on mobile
-            threshold: 0.05
+            rootMargin: '0px',
+            threshold: 0.1
         };
 
         const observer = new IntersectionObserver((entries, observer) => {
