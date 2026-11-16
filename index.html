@@ -1,707 +1,1451 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MEG AND GREG GROUP LLC - Federal Contracting, DoD Logistics Broker, and Brand Management">
-    <title>MEG AND GREG GROUP LLC | Federal Contracting & Logistics</title>
+    <meta name="description" content="MEG AND GREG GROUP, LLC — Federal Contracting, Prime Subcontracting Brokerage, Strategic Business Development & Digital Infrastructure Modernization.">
+    <title>MEG AND GREG GROUP, LLC | Federal Contracting &amp; Prime Acquisition Brokerage</title>
 
-    <!-- Google Fonts: Inter for a clean, corporate look -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- DNS Prefetch & Async Loading for FontAwesome -->
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- 
-      TAILWIND JS COMPILER REMOVED FOR MAXIMUM PERFORMANCE.
-      The entire site has been meticulously re-written in pristine Vanilla CSS below
-      to ensure instant loading on mobile devices while keeping the exact design intact.
-    -->
-    <style>
-        :root {
-            /* Custom Colors */
-            --corp-50: #f0f4f8; --corp-100: #d9e2ec; --corp-500: #334e68; --corp-700: #243b53; --corp-900: #102a43;
-            --acc-400: #a64d4d; --acc-500: #8b3333; --acc-600: #6e2727;
-            /* Slate Palette */
-            --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0; --slate-300: #cbd5e1; --slate-400: #94a3b8;
-            --slate-500: #64748b; --slate-600: #475569; --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a; --slate-950: #020617;
-            --white: #ffffff;
-            /* Typography & Layout */
-            --font-sans: 'Inter', sans-serif;
-            --max-w: 80rem; /* 1280px */
+    <script>
+        // Ensure page always opens cleanly at the very top on initial load & mobile webview restores
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
         }
 
-        *, *::before, *::after { box-sizing: border-box; }
-        * { margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-sans); background-color: var(--slate-50); color: var(--slate-800); line-height: 1.5; -webkit-font-smoothing: antialiased; }
-        a { text-decoration: none; color: inherit; }
-        img, video, svg { display: block; max-width: 100%; height: auto; }
-        button, input, textarea { font-family: inherit; }
-        
-        .container { width: 100%; max-width: var(--max-w); margin-inline: auto; padding-inline: 1rem; }
-        @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
-        @media (min-width: 1024px) { .container { padding-inline: 2rem; } }
-        
-        .section { padding-block: 5rem; }
-        .text-center { text-align: center; }
-        .hidden { display: none !important; }
-        
-        /* Typography */
-        h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
-        .section-subtitle { color: var(--acc-500); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem; margin-bottom: 0.5rem; display: block; }
-        .section-title { font-size: 1.875rem; color: var(--corp-900); margin-bottom: 1rem; }
-        @media (min-width: 768px) { .section-title { font-size: 2.25rem; } }
-        .section-desc { color: var(--slate-600); max-width: 48rem; margin-inline: auto; margin-bottom: 4rem; }
-        
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; font-weight: 500; border-radius: 0.375rem; transition: all 0.3s ease; cursor: pointer; border: none; text-align: center; font-size: 1rem; }
-        .btn-sm { padding: 0.625rem 1.25rem; font-size: 0.875rem; }
-        .btn-corp { background-color: var(--corp-900); color: var(--white); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-        .btn-corp:hover { background-color: var(--corp-700); }
-        .btn-acc { background-color: var(--acc-500); color: var(--white); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        .btn-acc:hover { background-color: var(--acc-600); }
-        .btn-outline { background-color: transparent; border: 2px solid rgba(255,255,255,0.3); color: var(--white); }
-        .btn-outline:hover { background-color: rgba(255,255,255,0.1); }
-        
-        .navbar { position: fixed; top: 0; width: 100%; z-index: 50; transition: all 0.3s; background-color: rgba(255,255,255,0.95); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); height: 5rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
-        .navbar.scrolled { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 100%; }
-        
-        .nav-logo-link { display: flex; align-items: center; height: 100%; padding-block: 0.375rem; }
-        .nav-logo-img { height: 3.5rem; width: auto; object-fit: contain; }
-        @media (min-width: 640px) { .nav-logo-img { height: 4.25rem; } }
-        
-        .nav-links { display: none; align-items: center; gap: 2rem; }
-        @media (min-width: 768px) { .nav-links { display: flex; } }
-        .nav-link { font-size: 0.875rem; font-weight: 500; color: var(--slate-600); transition: color 0.2s; }
-        .nav-link:hover { color: var(--corp-900); }
-        
-        .mobile-btn { display: flex; padding: 0.5rem; background: none; border: none; font-size: 1.5rem; color: var(--slate-600); cursor: pointer; }
-        @media (min-width: 768px) { .mobile-btn { display: none; } }
-        
-        .mobile-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); border-top: 1px solid var(--slate-100); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-        .mobile-menu.active { display: flex; animation: slideDown 0.3s ease-out forwards; }
-        .mobile-menu-link { padding: 1rem 1.5rem; border-bottom: 1px solid var(--slate-50); font-size: 0.875rem; font-weight: 500; color: var(--slate-600); }
-        .mobile-menu-link:hover { background-color: var(--slate-50); }
-        .mobile-menu-link.acc { color: var(--acc-600); }
-        
-        .hero { position: relative; background-color: var(--corp-900); color: var(--white); padding-top: 8rem; padding-bottom: 5rem; overflow: hidden; }
-        @media (min-width: 1024px) { .hero { padding-top: 12rem; padding-bottom: 8rem; } }
-        
-        .hero-pattern { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
-        .hero-pattern svg { width: 100%; height: 100%; }
-        
-        .hero-glow-1 { position: absolute; top: -20%; left: -10%; width: 70%; height: 70%; border-radius: 50%; background-color: rgba(51, 78, 104, 0.3); filter: blur(120px); pointer-events: none; z-index: 0; }
-        .hero-glow-2 { position: absolute; bottom: -20%; right: -10%; width: 60%; height: 60%; border-radius: 50%; background-color: rgba(139, 51, 51, 0.15); filter: blur(120px); pointer-events: none; z-index: 0; }
-        
-        .hero-content { position: relative; z-index: 10; text-align: center; max-width: 56rem; margin: 0 auto; }
-        
-        .hero-badge { display: inline-block; padding: 0.375rem 1rem; border-radius: 9999px; background-color: rgba(255,255,255,0.1); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 0 15px rgba(255,255,255,0.2); text-shadow: 0 0 10px rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
-        
-        .hero-title { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 1.5rem; }
-        @media (min-width: 768px) { .hero-title { font-size: 3rem; } }
-        @media (min-width: 1024px) { .hero-title { font-size: 3.75rem; } }
-        
-        .text-gradient { background: linear-gradient(to right, var(--acc-500), var(--acc-400)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .desktop-only { display: none; }
-        @media (min-width: 768px) { .desktop-only { display: block; } }
-        
-        .hero-desc { font-size: 1.125rem; color: var(--slate-300); font-weight: 300; max-width: 48rem; margin-inline: auto; margin-bottom: 2.5rem; }
-        @media (min-width: 768px) { .hero-desc { font-size: 1.25rem; } }
-        
-        .hero-actions { display: flex; flex-direction: column; gap: 1rem; justify-content: center; }
-        @media (min-width: 640px) { .hero-actions { flex-direction: row; } }
-        
-        .about { background-color: var(--white); }
-        .about-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center; }
-        @media (min-width: 1024px) { .about-grid { grid-template-columns: 1fr 1fr; } }
-        
-        .about-text p { color: var(--slate-600); margin-bottom: 1.25rem; line-height: 1.625; }
-        
-        .mission-box { background-color: var(--corp-50); padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid var(--acc-500); margin-bottom: 1.5rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-        .mission-box h4 { color: var(--corp-900); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
-        .mission-box p { font-style: italic; font-size: 0.875rem; color: var(--slate-700); margin-bottom: 0; }
-        @media (min-width: 768px) { .mission-box p { font-size: 1rem; } }
-        
-        .supporter-badge { display: flex; align-items: center; gap: 1rem; padding: 1rem; background-color: var(--white); border: 1px solid var(--slate-200); border-radius: 0.5rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-bottom: 2rem; }
-        .supporter-icon { width: 2.5rem; height: 2.5rem; border-radius: 50%; background-color: #fefce8; color: #eab308; display: flex; align-items: center; justify-content: center; border: 1px solid #fef08a; flex-shrink: 0; font-size: 1.125rem; }
-        .supporter-text h5 { font-size: 0.875rem; font-weight: 700; color: var(--corp-900); margin-bottom: 0.25rem; }
-        .supporter-text p { font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.125rem; }
-        
-        .stats-row { display: flex; align-items: center; gap: 2rem; }
-        .stat-item h3 { font-size: 1.875rem; color: var(--corp-900); line-height: 1; }
-        .stat-item p { font-size: 0.875rem; color: var(--slate-500); font-weight: 500; margin-top: 0.25rem; margin-bottom: 0; }
-        
-        .about-media { position: relative; }
-        .video-wrapper { border-radius: 0.5rem; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border: 1px solid var(--slate-100); background-color: var(--slate-100); min-height: 300px; display: flex; align-items: center; justify-content: center; }
-        .video-element { width: 100%; height: 100%; object-fit: cover; display: block; }
-        
-        .media-badge { position: absolute; bottom: -1.5rem; left: -1.5rem; background-color: var(--white); padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border: 1px solid var(--slate-100); display: none; align-items: center; gap: 1rem; }
-        @media (min-width: 768px) { .media-badge { display: flex; } }
-        .media-icon { background-color: var(--corp-50); padding: 0.75rem; border-radius: 9999px; color: var(--corp-900); font-size: 1.5rem; display: flex; }
-        .media-text h5 { color: var(--corp-900); font-weight: 700; margin-bottom: 0.125rem; }
-        .media-text p { font-size: 0.875rem; color: var(--slate-500); margin-bottom: 0; }
-        
-        .capabilities { background-color: var(--slate-50); border-top: 1px solid var(--slate-200); border-bottom: 1px solid var(--slate-200); }
-        .caps-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-        @media (min-width: 768px) { .caps-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .caps-grid { grid-template-columns: repeat(3, 1fr); } }
-        
-        .cap-card { background-color: var(--white); padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border: 1px solid var(--slate-100); transition: box-shadow 0.3s; }
-        .cap-card:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        .cap-icon { width: 3.5rem; height: 3.5rem; background-color: var(--corp-50); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: var(--corp-900); font-size: 1.5rem; margin-bottom: 1.5rem; }
-        .cap-card h3 { font-size: 1.25rem; color: var(--corp-900); margin-bottom: 0.75rem; }
-        .cap-card p { font-size: 0.875rem; color: var(--slate-600); line-height: 1.625; }
-        
-        .portfolio { background-color: var(--white); }
-        .port-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
-        @media (min-width: 1024px) { .port-grid { grid-template-columns: repeat(2, 1fr); } }
-        
-        .brand-card { display: flex; flex-direction: column; background-color: var(--white); border-radius: 1rem; border: 1px solid var(--slate-200); box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: all 0.3s; padding: 2rem; height: 100%; }
-        .brand-card:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
-        
-        .brand-header { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
-        @media (min-width: 640px) { .brand-header { flex-direction: row; justify-content: space-between; align-items: center; } }
-        
-        .brand-title { display: flex; align-items: center; gap: 0.75rem; }
-        .brand-logo { width: 3rem; height: 3rem; object-fit: contain; border-radius: 0.25rem; }
-        .brand-title h3 { font-size: 1.5rem; color: var(--corp-900); }
-        
-        .brand-tag { font-size: 0.625rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; text-align: center; }
-        .tag-blue { background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
-        .tag-pink { background-color: #fce7f3; color: #ff66a3; border: 1px solid #fbcfe8; }
-        
-        .brand-desc { color: var(--slate-600); margin-bottom: 2rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
-        .brand-desc p { font-size: 0.875rem; line-height: 1.625; }
-        
-        .brand-link { display: inline-flex; align-items: center; font-weight: 600; transition: color 0.2s, background-color 0.2s; justify-content: center; }
-        .link-blue { color: var(--corp-900); }
-        .link-blue:hover { color: var(--acc-500); }
-        
-        .link-pink { color: var(--white); background-color: #ff66a3; padding: 0.75rem; border-radius: 0.375rem; width: 100%; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-        .link-pink:hover { background-color: #e65c92; }
-        .brand-link i { margin-left: 0.5rem; font-size: 0.875rem; }
-        
-        .contact { background-color: var(--slate-900); color: var(--slate-100); }
-        .contact-card { background-color: var(--corp-900); border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); border: 1px solid var(--slate-700); display: grid; grid-template-columns: 1fr; }
-        @media (min-width: 1024px) { .contact-card { grid-template-columns: 4fr 8fr; } }
-        
-        .contact-info { padding: 2rem; display: flex; flex-direction: column; justify-content: flex-start; }
-        @media (min-width: 1024px) { .contact-info { padding: 3rem; } }
-        .contact-info h3 { font-size: 1.875rem; color: var(--white); margin-bottom: 1rem; }
-        .contact-info p { color: var(--slate-300); font-size: 0.875rem; line-height: 1.625; margin-bottom: 2.5rem; }
-        
-        .info-list { display: flex; flex-direction: column; gap: 1.5rem; }
-        .info-item { display: flex; align-items: flex-start; }
-        .info-icon { margin-top: 0.25rem; color: var(--acc-500); font-size: 1.25rem; width: 1.5rem; flex-shrink: 0; }
-        .info-text { margin-left: 1rem; color: var(--slate-300); }
-        .info-text h6 { color: var(--white); font-weight: 500; font-size: 1rem; margin-bottom: 0.25rem; }
-        .info-text span { display: block; font-size: 0.875rem; color: var(--slate-400); margin-top: 0.25rem; }
-        
-        .contact-form-wrap { background-color: var(--white); color: var(--slate-800); padding: 2rem; }
-        @media (min-width: 1024px) { .contact-form-wrap { padding: 3rem; } }
-        
-        .form-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
-        @media (min-width: 640px) { .form-grid { grid-template-columns: 1fr 1fr; } }
-        
-        .form-group label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--slate-700); margin-bottom: 0.25rem; }
-        .required { color: var(--acc-500); }
-        .label-hint { font-weight: 400; color: var(--slate-500); font-size: 0.75rem; }
-        
-        .form-control { width: 100%; padding: 0.625rem 1rem; border-radius: 0.375rem; border: 1px solid var(--slate-300); font-size: 0.875rem; background-color: var(--white); transition: all 0.2s; outline: none; }
-        .form-control:focus { border-color: var(--corp-500); box-shadow: 0 0 0 2px rgba(51, 78, 104, 0.2); }
-        textarea.form-control { resize: vertical; min-height: 80px; }
-        
-        .b2b-box { background-color: var(--slate-50); padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--slate-100); margin-bottom: 1.5rem; }
-        
-        .checkbox-group { margin-bottom: 1.5rem; }
-        .checkbox-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
-        @media (min-width: 640px) { .checkbox-grid { grid-template-columns: 1fr 1fr; } }
-        
-        .checkbox-label { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; }
-        .checkbox-input { appearance: none; width: 1rem; height: 1rem; border: 1px solid var(--slate-300); border-radius: 0.125rem; background-color: var(--white); cursor: pointer; transition: all 0.2s; display: grid; place-content: center; }
-        .checkbox-input::before { content: ""; width: 0.65em; height: 0.65em; transform: scale(0); transition: 120ms transform ease-in-out; box-shadow: inset 1em 1em var(--white); background-color: var(--white); transform-origin: center; clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%); }
-        .checkbox-input:checked { background-color: var(--acc-500); border-color: var(--acc-500); }
-        .checkbox-input:checked::before { transform: scale(1); }
-        .checkbox-text { font-size: 0.875rem; color: var(--slate-600); transition: color 0.2s; }
-        .checkbox-label:hover .checkbox-text { color: var(--corp-900); }
-        
-        .submit-btn { width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; background-color: var(--corp-900); color: var(--white); font-weight: 500; border-radius: 0.375rem; border: none; cursor: pointer; transition: background-color 0.3s; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-top: 1.5rem; font-size: 1rem; }
-        .submit-btn:hover { background-color: var(--corp-700); }
-        
-        .form-message { margin-top: 1rem; padding: 1rem; border-radius: 0.375rem; font-size: 0.875rem; display: flex; align-items: center; gap: 0.5rem; display: none; }
-        .form-message.success { background-color: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; display: flex; }
-        .form-message.error { background-color: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; display: flex; }
-        
-        .footer { background-color: var(--slate-950); padding-top: 4rem; padding-bottom: 2rem; border-top: 1px solid var(--slate-800); color: var(--slate-400); }
-        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-bottom: 3rem; }
-        @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
-        
-        .footer-logo img { height: 6rem; width: auto; object-fit: contain; margin-bottom: 1.5rem; }
-        @media (min-width: 768px) { .footer-logo img { height: 8rem; } }
-        .footer-about { font-size: 0.875rem; line-height: 1.625; max-width: 24rem; }
-        
-        .footer-links h4 { color: var(--white); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 0.75rem; }
-        .footer-links a { font-size: 0.875rem; transition: color 0.2s; }
-        .footer-links a:hover { color: var(--white); }
-        .footer-links a.hover-acc:hover { color: var(--acc-500); }
-        .footer-links a.hover-pink:hover { color: #ff66a3; }
-        
-        .footer-bottom { border-top: 1px solid var(--slate-800); padding-top: 2rem; display: flex; flex-direction: column; gap: 1rem; align-items: center; justify-content: space-between; font-size: 0.875rem; }
-        @media (min-width: 768px) { .footer-bottom { flex-direction: row; } }
-        .footer-legal { display: flex; gap: 1.5rem; }
-        .footer-legal a:hover { color: var(--white); }
-        
-        .fade-in-up { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s ease-out forwards; animation-play-state: paused; }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-        
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        function forceScrollTop() {
+            const validHashes = ['#expertise', '#process', '#engagement', '#about', '#contact'];
+            if (!validHashes.includes(window.location.hash)) {
+                if (window.location.hash) {
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                }
+                window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                if (document.documentElement) document.documentElement.scrollTop = 0;
+                if (document.body) document.body.scrollTop = 0;
+            }
+        }
+
+        forceScrollTop();
+        window.addEventListener('DOMContentLoaded', forceScrollTop);
+        window.addEventListener('load', () => {
+            forceScrollTop();
+            setTimeout(forceScrollTop, 50);
+        });
+        window.addEventListener('pageshow', forceScrollTop);
+
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#4f46e5',
+                            600: '#4338ca',
+                            700: '#3730a3',
+                        },
+                        brand: {
+                            blue: '#4f74a8',
+                            gold: '#eab308',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html, body {
+            overflow-x: hidden;
+            overflow-anchor: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        @keyframes sectionFocusPulse {
+            0% { box-shadow: inset 0 0 0 2px rgba(79, 70, 229, 0.35); background-color: rgba(238, 242, 255, 0.45); }
+            100% { box-shadow: inset 0 0 0 0 rgba(79, 70, 229, 0); }
+        }
+        .section-engaged {
+            animation: sectionFocusPulse 0.9s ease-out;
+        }
+        @keyframes stepSwap {
+            0% { opacity: 0; transform: translateX(8px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        .step-animate {
+            animation: stepSwap 0.25s ease-out forwards;
+        }
     </style>
 </head>
+<body class="font-sans text-slate-800 bg-white antialiased selection:bg-primary-500 selection:text-white pb-20 md:pb-0">
 
-<body>
-    <header class="navbar" id="navbar">
-        <div class="container nav-inner">
-            <a href="#" class="nav-logo-link">
-                <img src="MGGLogo.png" alt="MEG AND GREG GROUP LLC Logo" class="nav-logo-img" fetchpriority="high">
+    <!-- Custom Toast Notification -->
+    <div id="toast-container" class="fixed top-20 md:top-auto md:bottom-5 right-4 left-4 md:left-auto z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- Top App Bar / Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-200 bg-white/95 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-5xl mx-auto px-3 sm:px-6 h-16 md:h-20 flex items-center justify-between gap-2">
+            <a href="#hero" class="flex items-center gap-2.5 min-w-0 shrink group">
+                <!-- Light-Background M.E.G & G.R.E.G group. Vector Logo -->
+                <svg class="h-11 w-11 sm:h-12 sm:w-12 md:h-14 md:w-14 shrink-0 transition-transform duration-200 group-hover:scale-105" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MEG AND GREG GROUP, LLC Logo">
+                    <defs>
+                        <clipPath id="headerGlobeClip">
+                            <circle cx="110" cy="110" r="102"/>
+                        </clipPath>
+                        <filter id="logoDropShadow" x="-10%" y="-10%" width="120%" height="125%">
+                            <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#0f172a" flood-opacity="0.16"/>
+                        </filter>
+                    </defs>
+
+                    <!-- Globe Outer Ring & Continents Silhouette -->
+                    <g clip-path="url(#headerGlobeClip)">
+                        <circle cx="110" cy="110" r="102" fill="#f8fafc"/>
+                        <!-- Americas & Eurasia/Africa Abstract Vector Shapes -->
+                        <path d="M38 42 C52 36, 74 44, 80 60 C85 74, 70 86, 66 100 C62 114, 78 134, 72 162 C68 180, 56 192, 48 186 C42 170, 46 144, 38 124 C28 102, 22 62, 38 42 Z" fill="#cbd5e1" fill-opacity="0.55"/>
+                        <path d="M126 36 C152 32, 184 52, 192 82 C198 106, 180 132, 166 154 C156 170, 144 176, 138 160 C132 142, 140 120, 128 106 C116 92, 114 54, 126 36 Z" fill="#cbd5e1" fill-opacity="0.5"/>
+                        <path d="M92 22 C104 16, 122 18, 128 28 C122 36, 102 36, 92 22 Z" fill="#cbd5e1" fill-opacity="0.5"/>
+
+                        <!-- Network Mesh Overlay -->
+                        <g stroke="#94a3b8" stroke-opacity="0.32" stroke-width="1.1">
+                            <path d="M24 72 L78 44 L146 38 L194 84 L172 156 L110 198 L44 164 Z"/>
+                            <path d="M78 44 L112 96 L146 38"/>
+                            <path d="M24 72 L112 96 L194 84"/>
+                            <path d="M44 164 L112 96 L172 156"/>
+                            <path d="M112 96 L110 198"/>
+                            <path d="M58 26 L164 184 M168 28 L48 182"/>
+                        </g>
+                        <!-- Mesh Nodes -->
+                        <g fill="#94a3b8" fill-opacity="0.45">
+                            <circle cx="78" cy="44" r="2.8"/>
+                            <circle cx="146" cy="38" r="2.8"/>
+                            <circle cx="112" cy="96" r="3.2"/>
+                            <circle cx="24" cy="72" r="2.5"/>
+                            <circle cx="194" cy="84" r="2.5"/>
+                            <circle cx="172" cy="156" r="2.8"/>
+                            <circle cx="44" cy="164" r="2.8"/>
+                            <circle cx="110" cy="198" r="2.5"/>
+                        </g>
+                    </g>
+                    <circle cx="110" cy="110" r="102" stroke="#cbd5e1" stroke-opacity="0.6" stroke-width="1.2"/>
+
+                    <!-- Typography Stack with Subtle Depth -->
+                    <g filter="url(#logoDropShadow)">
+                        <!-- Tall Condensed Slate-Blue M.E.G& -->
+                        <text x="110" y="132" text-anchor="middle" fill="#5b7db8" font-family="Inter, Arial Black, sans-serif" font-weight="900" font-size="68" letter-spacing="-1.5" transform="scale(0.86, 1.18) translate(18, -20)">M.E.G&amp;</text>
+
+                        <!-- Wide Heavy Dark Navy G.R.E.G -->
+                        <text x="108" y="164" text-anchor="middle" fill="#13315c" font-family="Inter, Arial Black, sans-serif" font-weight="900" font-size="37" letter-spacing="1.5" transform="scale(1.06, 0.92) translate(-6, 14)">G.R.E.G</text>
+
+                        <!-- Lowercase Heavy Navy group + Yellow Dot -->
+                        <text x="155" y="185" text-anchor="middle" fill="#13315c" font-family="Inter, Arial Black, sans-serif" font-weight="900" font-size="21" letter-spacing="0.2" transform="scale(1.08, 0.92) translate(-12, 15)">group</text>
+                        <circle cx="197" cy="180" r="4.8" fill="#facc15"/>
+                    </g>
+                </svg>
+
+                <div class="leading-none min-w-0">
+                    <span class="block text-xs sm:text-base md:text-lg font-extrabold tracking-tight text-slate-900 truncate">
+                        MEG &amp; GREG<span class="hidden sm:inline"> GROUP</span><span class="text-primary-500">.</span>
+                    </span>
+                    <span class="hidden sm:block text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-0.5">Federal Contracting &amp; Advisory</span>
+                </div>
             </a>
-            
-            <nav class="nav-links">
-                <a href="about_us.html" class="nav-link">About Us</a>
-                <a href="#capabilities" class="nav-link">Capabilities</a>
-                <a href="#portfolio" class="nav-link">Our Portfolio</a>
-                <a href="#contact" class="btn btn-sm btn-corp">Contact Us</a>
-            </nav>
 
-            <button id="mobile-menu-btn" class="mobile-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <!-- Mobile Direct Action Pill -->
+            <a href="#contact" onclick="selectInquiry('a Free Consultation')" class="md:hidden shrink-0 inline-flex items-center justify-center px-2.5 py-1.5 rounded-full bg-primary-500 active:bg-primary-600 text-white text-[10px] sm:text-[11px] font-bold shadow-sm leading-none whitespace-nowrap">
+                Schedule a Free Consultation
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <ul class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-slate-600 shrink-0">
+                <li><a href="#expertise" class="hover:text-primary-600 transition-colors">Capabilities</a></li>
+                <li><a href="#process" class="hover:text-primary-600 transition-colors">How It Works</a></li>
+                <li><a href="#engagement" class="hover:text-primary-600 transition-colors">Engagement</a></li>
+                <li><a href="#about" class="hover:text-primary-600 transition-colors">Firm</a></li>
+                <li>
+                    <a href="#contact" onclick="selectInquiry('a Free Consultation')" class="inline-flex items-center justify-center px-4 lg:px-5 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-semibold transition-all shadow-sm whitespace-nowrap">
+                        Schedule a Free Consultation
+                    </a>
+                </li>
+            </ul>
         </div>
+    </nav>
 
-        <nav id="mobile-menu" class="mobile-menu">
-            <a href="about_us.html" class="mobile-menu-link mobile-link">About Us</a>
-            <a href="#capabilities" class="mobile-menu-link mobile-link">Capabilities</a>
-            <a href="#portfolio" class="mobile-menu-link mobile-link">Our Portfolio</a>
-            <a href="#contact" class="mobile-menu-link acc mobile-link">Contact Us</a>
-        </nav>
-    </header>
+    <!-- Mobile App Bottom Navigation Bar -->
+    <nav id="mobile-bottom-nav" aria-label="Mobile App Navigation" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-2 pt-1.5 pb-2 shadow-[0_-6px_24px_rgba(15,23,42,0.08)]">
+        <div class="relative grid grid-cols-5 gap-1 text-center">
+            <!-- Animated Sliding Active Pill -->
+            <div id="mobile-nav-indicator" class="absolute top-0 bottom-0 left-0 w-1/5 rounded-xl bg-primary-50 border border-primary-200/80 transition-transform duration-300 ease-out pointer-events-none opacity-0"></div>
 
-    <section id="hero" class="hero">
-        <div class="hero-pattern">
-            <svg aria-hidden="true">
-                <defs>
-                    <pattern id="hero-star-pattern" width="36" height="36" patternUnits="userSpaceOnUse">
-                        <path transform="translate(15, 15) scale(0.6)" d="M5 0L6.545 3.177L10 3.677L7.5 6.115L8.09 9.576L5 7.95L1.91 9.576L2.5 6.115L0 3.677L3.455 3.177Z" fill="rgba(255, 255, 255, 0.08)"></path>
-                    </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#hero-star-pattern)"></rect>
-            </svg>
+            <a href="#expertise" data-nav-target="expertise" data-nav-index="0" class="mobile-nav-link relative z-10 flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-500 active:scale-90 transition-all duration-150">
+                <i class="fas fa-briefcase text-sm mb-0.5 transition-transform duration-200"></i>
+                <span class="text-[10px] font-bold tracking-tight">Services</span>
+            </a>
+            <a href="#process" data-nav-target="process" data-nav-index="1" class="mobile-nav-link relative z-10 flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-500 active:scale-90 transition-all duration-150">
+                <i class="fas fa-route text-sm mb-0.5 transition-transform duration-200"></i>
+                <span class="text-[10px] font-bold tracking-tight">Process</span>
+            </a>
+            <a href="#engagement" data-nav-target="engagement" data-nav-index="2" class="mobile-nav-link relative z-10 flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-500 active:scale-90 transition-all duration-150">
+                <i class="fas fa-layer-group text-sm mb-0.5 transition-transform duration-200"></i>
+                <span class="text-[10px] font-bold tracking-tight">Models</span>
+            </a>
+            <a href="#about" data-nav-target="about" data-nav-index="3" class="mobile-nav-link relative z-10 flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-500 active:scale-90 transition-all duration-150">
+                <i class="fas fa-building-shield text-sm mb-0.5 transition-transform duration-200"></i>
+                <span class="text-[10px] font-bold tracking-tight">Firm</span>
+            </a>
+            <a href="#contact" data-nav-target="contact" data-nav-index="4" class="mobile-nav-link relative z-10 flex flex-col items-center justify-center py-1.5 rounded-xl text-slate-500 active:scale-90 transition-all duration-150">
+                <i class="fas fa-paper-plane text-sm mb-0.5 transition-transform duration-200"></i>
+                <span class="text-[10px] font-bold tracking-tight">Inquire</span>
+            </a>
         </div>
+    </nav>
 
-        <div class="hero-glow-1"></div>
-        <div class="hero-glow-2"></div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-badge fade-in-up">WOSB CERTIFIED </span>
-                <h1 class="hero-title fade-in-up">
-                    Strategic Execution in <br class="desktop-only" /> 
-                    <span class="text-gradient">DoD Logistics & Contracting</span>
+    <!-- Hero Section + Interactive Executive Priority Selector -->
+    <section id="hero" class="pt-24 pb-10 md:pt-32 md:pb-16 bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl space-y-5">
+                <h1 class="text-3xl sm:text-5xl lg:text-[3.3rem] font-extrabold tracking-tight text-slate-900 leading-[1.14]">
+                    Federal Contract Capture, Prime Brokerage &amp; Digital Infrastructure.
                 </h1>
-                <p class="hero-desc fade-in-up">
-                    MEG AND GREG GROUP LLC operates as a specialized DoD logistics broker and premier holding company, delivering robust operational excellence across government sectors and commercial brands.
+
+                <p class="text-base sm:text-xl text-slate-600 leading-relaxed">
+                    MEG AND GREG GROUP, LLC partners with commercial manufacturers, facilities operators, and growth-focused enterprises to win federal and prime contracts, execute B2B business development, and build modern digital infrastructure.
                 </p>
-                <div class="hero-actions fade-in-up">
-                    <a href="#portfolio" class="btn btn-acc">Explore Our Brands</a>
-                    <a href="#contact" class="btn btn-outline">Partner With Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="about" class="section about">
-        <div class="container about-grid">
-            <div class="about-text fade-in-up delay-100">
-                <h4 class="section-subtitle">About The Organization</h4>
-                <h2 class="section-title">Building Sustainable Value Across Sectors</h2>
-                <p>
-                    Operating at the intersection of public sector requirements and private sector innovation, <strong>MEG AND GREG GROUP LLC</strong> functions not only as a parent holding company but as a specialized <strong>DoD logistics broker and firm</strong>. 
-                </p>
-                <p>
-                    As a registered federal contracting entity, we maintain the highest standards of compliance and efficiency. Simultaneously, we nurture and scale consumer-facing platforms that enrich lives and streamline commerce and supply chains.
-                </p>
-                
-                <div class="mission-box">
-                    <h4><i class="fas fa-flag"></i> Our Mission</h4>
-                    <p>"Keeping manufacturing and jobs in America while partnering with other businesses to provide preferential hiring to veterans."</p>
-                </div>
-
-                <div class="supporter-badge">
-                    <div class="supporter-icon"><i class="fas fa-ribbon"></i></div>
-                    <div class="supporter-text">
-                        <h5>Proud Supporter & Fundraiser</h5>
-                        <p>&bull; Concerned Vets for America</p>
-                        <p>&bull; Stop Soldier Suicide</p>
-                    </div>
-                </div>
-
-                <div class="stats-row">
-                    <div class="stat-item">
-                        <h3>100%</h3>
-                        <p>Compliance Driven</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>2</h3>
-                        <p>Flagship Brands</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="about-media fade-in-up delay-200">
-                <!-- Video loading is deferred via JavaScript to prioritize page rendering -->
-                <div id="video-container" class="video-wrapper"></div>
-                
-                <div class="media-badge">
-                    <div class="media-icon"><i class="fas fa-handshake"></i></div>
-                    <div class="media-text">
-                        <h5>Trusted Partner</h5>
-                        <p>In B2B & B2G Sectors</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="capabilities" class="section capabilities">
-        <div class="container">
-            <div class="text-center fade-in-up">
-                <h4 class="section-subtitle">Our Capabilities</h4>
-                <h2 class="section-title">Comprehensive Enterprise Solutions</h2>
-                <p class="section-desc">Leveraging our holding structure to provide unparalleled agility and scale in both government contracting and commercial markets.</p>
-            </div>
-
-            <div class="caps-grid">
-                <div class="cap-card fade-in-up delay-100">
-                    <div class="cap-icon"><i class="fas fa-file-contract"></i></div>
-                    <h3>Federal Contracting</h3>
-                    <p>Registered and equipped to bid, manage, and execute complex federal contracts with strict adherence to procurement regulations.</p>
-                </div>
-
-                <div class="cap-card fade-in-up delay-200">
-                    <div class="cap-icon"><i class="fas fa-truck-fast"></i></div>
-                    <h3>DoD Logistics Brokerage</h3>
-                    <p>Serving as a specialized liaison optimizing supply chains, procurement, and resource distribution specifically for Department of Defense frameworks.</p>
-                </div>
-
-                <div class="cap-card fade-in-up delay-300">
-                    <div class="cap-icon"><i class="fas fa-building"></i></div>
-                    <h3>Brand Portfolio Management</h3>
-                    <p>Strategic oversight, capital allocation, and shared operational resources to incubate and scale our proprietary brands.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="section portfolio">
-        <div class="container">
-            <div class="text-center fade-in-up">
-                <h4 class="section-subtitle">Our Portfolio</h4>
-                <h2 class="section-title">Flagship Brands</h2>
-                <p class="section-desc">MEG AND GREG GROUP currently operates two primary brands, each serving distinct market needs while benefiting from our centralized holding structure.</p>
-            </div>
-
-            <div class="port-grid">
-                <!-- Brand 1: Lodging Sources -->
-                <div class="brand-card fade-in-up delay-100">
-                    <div class="brand-header">
-                        <div class="brand-title">
-                            <img src="LSLogo_light.png" alt="Lodging Sources Logo" class="brand-logo" loading="lazy">
-                            <h3>Lodging Sources</h3>
-                        </div>
-                        <span class="brand-tag tag-blue">Government B2B/B2G Lodging</span>
-                    </div>
-                    <div class="brand-desc">
-                        <p>A WOSB Certified Prime Contractor providing turnkey event, lodging, and catering logistics for the Federal Government. We connect the DoD with perfect event spaces and accommodations that strictly adhere to SOWs and GSA Per Diem requirements.</p>
-                        <p>From <strong>YRRP events</strong> and <strong>VA medical lodging</strong> to rapid deployment of emergency housing blocks, we offer single-point-of-contact coordination. We handle Master Billing via WAWF and provide full on-site representation.</p>
-                    </div>
-                    <a href="https://lodgingsources.com" target="_blank" rel="noopener noreferrer" class="brand-link link-blue">
-                        Visit Lodgingsources.com <i class="fas fa-arrow-right"></i>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+                    <a href="#contact" onclick="selectInquiry('a Free Consultation')" class="text-center px-7 py-4 rounded-2xl bg-primary-500 hover:bg-primary-600 active:scale-[0.99] text-white font-bold text-base transition-all shadow-lg shadow-primary-500/20">
+                        Schedule a Free Consultation
                     </a>
-                </div>
-
-                <!-- Brand 2: PINK PILLED -->
-                <div class="brand-card fade-in-up delay-200">
-                    <div class="brand-header">
-                        <div class="brand-title">
-                            <img src="PINK PILLED Logo.png" alt="PINK PILLED Logo" class="brand-logo" loading="lazy">
-                            <h3>PINK PILLED&trade;</h3>
-                        </div>
-                        <span class="brand-tag tag-pink">Health Sciences R&D</span>
-                    </div>
-                    <div class="brand-desc">
-                        <p>A highly capable Prime Contractor navigating complex solicitations across the DoD, NIH, and DHA. We specialize in <strong>Bioinformatics & Biosurveillance</strong>, architecting genomic data pipelines and biological threat models.</p>
-                        <p>Through strategic <strong>Scouting & Discovery</strong>, we identify disruptive commercial technologies from non-traditional creators and transition their innovations into the hands of the warfighter to maintain asymmetric advantage.</p>
-                    </div>
-                    <a href="https://pinkpilled.life" target="_blank" rel="noopener noreferrer" class="brand-link link-pink">
-                        Visit Pinkpilled.life <i class="fas fa-arrow-right"></i>
+                    <a href="#engagement" class="text-center px-7 py-4 rounded-2xl bg-white hover:bg-slate-50 active:scale-[0.99] text-slate-800 font-semibold text-base border border-slate-200 transition-all">
+                        Explore Advisory &amp; Build Models
                     </a>
                 </div>
             </div>
+
+            <!-- Interactive Executive Priority Explorer -->
+            <div class="mt-8 md:mt-10 rounded-3xl bg-white border border-slate-200/90 shadow-lg shadow-slate-200/40 p-4 sm:p-6">
+                <div class="flex items-center justify-between gap-2 mb-3.5">
+                    <p class="text-xs font-extrabold uppercase tracking-wider text-primary-600">
+                        <i class="fas fa-sliders-h mr-1.5"></i>Select Your Organizational Priority
+                    </p>
+                    <span class="text-[11px] font-medium text-slate-400 hidden sm:inline">Tap a division focus to preview execution scope</span>
+                </div>
+
+                <div role="tablist" aria-label="Organizational Priority" class="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-4">
+                    <button type="button" role="tab" aria-selected="true" data-pillar="contracts"
+                        class="pillar-tab text-left p-3 rounded-2xl border-2 border-primary-500 bg-primary-50/60 text-slate-900 transition-all active:scale-[0.98]">
+                        <div class="flex items-center justify-between mb-1">
+                            <i class="fas fa-file-signature text-primary-600 text-sm"></i>
+                            <span class="pillar-dot w-2 h-2 rounded-full bg-primary-500"></span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-bold leading-snug">Federal &amp; Prime Contracts</p>
+                    </button>
+
+                    <button type="button" role="tab" aria-selected="false" data-pillar="infrastructure"
+                        class="pillar-tab text-left p-3 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-slate-50 text-slate-700 transition-all active:scale-[0.98]">
+                        <div class="flex items-center justify-between mb-1">
+                            <i class="fas fa-server text-slate-400 text-sm"></i>
+                            <span class="pillar-dot w-2 h-2 rounded-full bg-transparent"></span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-bold leading-snug">Digital Infrastructure</p>
+                    </button>
+
+                    <button type="button" role="tab" aria-selected="false" data-pillar="bizdev"
+                        class="pillar-tab text-left p-3 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-slate-50 text-slate-700 transition-all active:scale-[0.98]">
+                        <div class="flex items-center justify-between mb-1">
+                            <i class="fas fa-chart-line text-slate-400 text-sm"></i>
+                            <span class="pillar-dot w-2 h-2 rounded-full bg-transparent"></span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-bold leading-snug">Business Development</p>
+                    </button>
+
+                    <button type="button" role="tab" aria-selected="false" data-pillar="launch"
+                        class="pillar-tab text-left p-3 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-slate-50 text-slate-700 transition-all active:scale-[0.98]">
+                        <div class="flex items-center justify-between mb-1">
+                            <i class="fas fa-rocket text-slate-400 text-sm"></i>
+                            <span class="pillar-dot w-2 h-2 rounded-full bg-transparent"></span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-bold leading-snug">New Venture Launch</p>
+                    </button>
+                </div>
+
+                <div id="pillar-panel" class="rounded-2xl bg-slate-50 border border-slate-200/70 p-4 sm:p-5 transition-all duration-200">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="space-y-1.5 max-w-2xl">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span id="pillar-badge" class="px-2.5 py-0.5 rounded-md bg-primary-100 text-primary-700 text-[11px] font-bold">Manufacturing, Aerospace &amp; Facilities</span>
+                                <span id="pillar-metric" class="text-xs font-semibold text-slate-500">RFI &bull; RFP &bull; Subcontracting</span>
+                            </div>
+                            <h2 id="pillar-heading" class="text-base sm:text-lg font-extrabold text-slate-900">
+                                Turn Shop &amp; Field Capacity Into Awarded Federal and Prime Contracts
+                            </h2>
+                            <p id="pillar-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Our team sources qualified solicitations, positions your company early during RFI/Sources Sought stages, assembles compliant FAR/DFARS proposal packages, and brokers direct relationships with prime buyers.
+                            </p>
+                        </div>
+
+                        <div class="shrink-0">
+                            <a id="pillar-cta" href="#contact" onclick="selectInquiry('a Free Consultation regarding Federal & Prime Contract Brokerage')"
+                               class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-primary-600 active:scale-[0.98] text-white text-xs sm:text-sm font-bold transition-all">
+                                <span id="pillar-cta-text">Schedule a Free Consultation</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="section contact">
-        <div class="container">
-            <div class="contact-card fade-in-up">
-                
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <p>Whether you are an agency seeking a reliable contracting partner, inquiring about a teaming agreement, or exploring our logistics brokerage services, we are ready to connect.</p>
-                    
-                    <div class="info-list">
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="info-text">
-                                <h6>Headquarters</h6>
-                                <span>Chillicothe, Ohio<br>United States</span>
+    <!-- Core Capabilities (Horizontal Carousel on Mobile + Tap-to-Expand Accordions) -->
+    <section id="expertise" class="py-12 md:py-24 transition-colors">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 md:mb-12">
+                <div class="max-w-2xl">
+                    <span class="text-xs font-bold uppercase tracking-wider text-primary-600">Core Capabilities</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-1 mb-2">Contract Capture, Growth Strategy &amp; Modern Systems</h2>
+                    <p class="text-slate-600 text-sm sm:text-lg">Swipe through our service lines and tap any card to expand full scope and deliverables.</p>
+                </div>
+
+                <!-- Mobile Carousel Arrow Controls -->
+                <div class="flex md:hidden items-center justify-between bg-slate-100 px-3 py-2 rounded-xl border border-slate-200/70">
+                    <span class="text-xs font-bold text-slate-600"><i class="fas fa-arrows-left-right text-primary-500 mr-1.5"></i>Swipe or tap cards</span>
+                    <div class="flex items-center gap-1.5">
+                        <button type="button" id="service-prev" aria-label="Previous Capability" class="w-8 h-8 rounded-lg bg-white text-slate-700 border border-slate-200 flex items-center justify-center active:scale-95 shadow-xs">
+                            <i class="fas fa-chevron-left text-xs"></i>
+                        </button>
+                        <button type="button" id="service-next" aria-label="Next Capability" class="w-8 h-8 rounded-lg bg-white text-slate-700 border border-slate-200 flex items-center justify-center active:scale-95 shadow-xs">
+                            <i class="fas fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Horizontal Snap Carousel on Mobile / 3-Col Grid on Desktop -->
+            <div id="services-carousel" class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar pb-2 -mx-4 px-4 md:mx-0 md:px-0 items-start">
+                <!-- Capability 1 -->
+                <div class="service-card snap-center shrink-0 w-[85vw] sm:w-[340px] md:w-auto rounded-2xl bg-white border border-primary-300 ring-1 ring-primary-500/10 shadow-sm transition-all">
+                    <button type="button" aria-expanded="true" class="service-toggle w-full text-left p-5 sm:p-6 flex items-start justify-between gap-3 cursor-pointer">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-base shrink-0 mt-0.5">
+                                <i class="fas fa-file-signature"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">RFI, RFP &amp; Sources Sought Capture</h3>
+                                <span class="service-hint inline-flex items-center gap-1 text-[11px] font-bold text-primary-600 mt-1">
+                                    <span>Hide details</span>
+                                </span>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="info-text">
-                                <h6>General Inquiries</h6>
-                                <span>contact@megandgreg.us</span> 
+                        <span class="w-8 h-8 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 transition-transform duration-200 rotate-180 service-chevron">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </span>
+                    </button>
+                    <div class="service-body px-5 sm:px-6 pb-5 sm:pb-6 pt-1 border-t border-slate-100">
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">Positioning your company early during market research (RFIs) and managing compliant, high-scoring RFP/RFQ bid submissions.</p>
+                        <ul class="space-y-1.5 text-xs font-medium text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>Early RFI &amp; Sources Sought positioning</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>Full compliance matrix &amp; technical volume assembly</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Capability 2 -->
+                <div class="service-card snap-center shrink-0 w-[85vw] sm:w-[340px] md:w-auto rounded-2xl bg-white border border-slate-200 hover:border-primary-300 shadow-sm transition-all">
+                    <button type="button" aria-expanded="false" class="service-toggle w-full text-left p-5 sm:p-6 flex items-start justify-between gap-3 cursor-pointer">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-base shrink-0 mt-0.5">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Prime &amp; Federal Contract Brokerage</h3>
+                                <span class="service-hint inline-flex items-center gap-1 text-[11px] font-bold text-primary-600 mt-1">
+                                    <span>Tap to expand</span>
+                                </span>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-shield-halved"></i></div>
-                            <div class="info-text">
-                                <h6>B2B / B2G Operations</h6>
-                                <span>SAM.gov Registered</span> 
+                        <span class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center shrink-0 transition-transform duration-200 service-chevron">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </span>
+                    </button>
+                    <div class="service-body hidden px-5 sm:px-6 pb-5 sm:pb-6 pt-1 border-t border-slate-100">
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">Connecting vetted manufacturers, aerospace component suppliers, and facilities contractors directly with defense primes and agency buyers.</p>
+                        <ul class="space-y-1.5 text-xs font-medium text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>Direct prime small-business liaison introductions</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>Teaming &amp; subcontracting structure negotiation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Capability 3 -->
+                <div class="service-card snap-center shrink-0 w-[85vw] sm:w-[340px] md:w-auto rounded-2xl bg-white border border-slate-200 hover:border-primary-300 shadow-sm transition-all">
+                    <button type="button" aria-expanded="false" class="service-toggle w-full text-left p-5 sm:p-6 flex items-start justify-between gap-3 cursor-pointer">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-base shrink-0 mt-0.5">
+                                <i class="fas fa-chart-line"></i>
                             </div>
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">B2B &amp; GovCon Business Development</h3>
+                                <span class="service-hint inline-flex items-center gap-1 text-[11px] font-bold text-primary-600 mt-1">
+                                    <span>Tap to expand</span>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center shrink-0 transition-transform duration-200 service-chevron">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </span>
+                    </button>
+                    <div class="service-body hidden px-5 sm:px-6 pb-5 sm:pb-6 pt-1 border-t border-slate-100">
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">Building repeatable revenue pipelines, executive partner outreach, and strategic teaming agreements across commercial and public-sector markets.</p>
+                        <ul class="space-y-1.5 text-xs font-medium text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>Targeted decision-maker outreach campaigns</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>Qualified opportunity pipeline tracking</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Capability 4 -->
+                <div class="service-card snap-center shrink-0 w-[85vw] sm:w-[340px] md:w-auto rounded-2xl bg-white border border-slate-200 hover:border-primary-300 shadow-sm transition-all">
+                    <button type="button" aria-expanded="false" class="service-toggle w-full text-left p-5 sm:p-6 flex items-start justify-between gap-3 cursor-pointer">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-base shrink-0 mt-0.5">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Digital Infrastructure &amp; Modernization</h3>
+                                <span class="service-hint inline-flex items-center gap-1 text-[11px] font-bold text-primary-600 mt-1">
+                                    <span>Tap to expand</span>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center shrink-0 transition-transform duration-200 service-chevron">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </span>
+                    </button>
+                    <div class="service-body hidden px-5 sm:px-6 pb-5 sm:pb-6 pt-1 border-t border-slate-100">
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">Upgrading legacy businesses with modern web presence, client/vendor portals, CRM workflows, and automated operational tooling that pass prime due diligence.</p>
+                        <ul class="space-y-1.5 text-xs font-medium text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>Modern web architecture &amp; executive capability decks</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>Automated intake, CRM &amp; quoting workflows</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Capability 5 -->
+                <div class="service-card snap-center shrink-0 w-[85vw] sm:w-[340px] md:w-auto rounded-2xl bg-white border border-slate-200 hover:border-primary-300 shadow-sm transition-all">
+                    <button type="button" aria-expanded="false" class="service-toggle w-full text-left p-5 sm:p-6 flex items-start justify-between gap-3 cursor-pointer">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-base shrink-0 mt-0.5">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">New Venture &amp; Spin-Off Launch</h3>
+                                <span class="service-hint inline-flex items-center gap-1 text-[11px] font-bold text-primary-600 mt-1">
+                                    <span>Tap to expand</span>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center shrink-0 transition-transform duration-200 service-chevron">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </span>
+                    </button>
+                    <div class="service-body hidden px-5 sm:px-6 pb-5 sm:pb-6 pt-1 border-t border-slate-100">
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">Taking new companies or specialized divisions from zero to market-ready—standing up brand identity, compliance registrations, digital infrastructure, and go-to-market systems.</p>
+                        <ul class="space-y-1.5 text-xs font-medium text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>SAM.gov, CAGE &amp; NAICS positioning setup</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>Complete digital stack &amp; outbound launch kit</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Capability 6 -->
+                <div class="service-card snap-center shrink-0 w-[85vw] sm:w-[340px] md:w-auto rounded-2xl bg-white border border-slate-200 hover:border-primary-300 shadow-sm transition-all">
+                    <button type="button" aria-expanded="false" class="service-toggle w-full text-left p-5 sm:p-6 flex items-start justify-between gap-3 cursor-pointer">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-base shrink-0 mt-0.5">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">FAR/DFARS &amp; Facilities Bid Governance</h3>
+                                <span class="service-hint inline-flex items-center gap-1 text-[11px] font-bold text-primary-600 mt-1">
+                                    <span>Tap to expand</span>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center shrink-0 transition-transform duration-200 service-chevron">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </span>
+                    </button>
+                    <div class="service-body hidden px-5 sm:px-6 pb-5 sm:pb-6 pt-1 border-t border-slate-100">
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">Structuring competitive pricing, SLA frameworks, and federal flow-down compliance for multi-site facilities operations and precision manufacturing.</p>
+                        <ul class="space-y-1.5 text-xs font-medium text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>FAR/DFARS flow-down &amp; risk audit</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-primary-500"></i>Margin-protected cost &amp; SLA modeling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Carousel Dot Indicators -->
+            <div id="services-dots" class="flex md:hidden items-center justify-center gap-2 mt-4">
+                <button type="button" aria-label="Slide 1" data-slide="0" class="service-dot h-2 w-6 rounded-full bg-primary-500 transition-all"></button>
+                <button type="button" aria-label="Slide 2" data-slide="1" class="service-dot h-2 w-2 rounded-full bg-slate-300 transition-all"></button>
+                <button type="button" aria-label="Slide 3" data-slide="2" class="service-dot h-2 w-2 rounded-full bg-slate-300 transition-all"></button>
+                <button type="button" aria-label="Slide 4" data-slide="3" class="service-dot h-2 w-2 rounded-full bg-slate-300 transition-all"></button>
+                <button type="button" aria-label="Slide 5" data-slide="4" class="service-dot h-2 w-2 rounded-full bg-slate-300 transition-all"></button>
+                <button type="button" aria-label="Slide 6" data-slide="5" class="service-dot h-2 w-2 rounded-full bg-slate-300 transition-all"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works / Interactive Step-by-Step Process -->
+    <section id="process" class="py-12 md:py-24 bg-slate-50 border-y border-slate-100 transition-colors">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 md:mb-10">
+                <div class="max-w-2xl">
+                    <span class="text-xs font-bold uppercase tracking-wider text-primary-600">Execution Framework</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-1 mb-2">Modernize Your Foundation, Then Capture Market Share</h2>
+                    <p class="text-slate-600 text-sm sm:text-lg">Step through our 3-phase acquisition and modernization methodology below.</p>
+                </div>
+                <div class="inline-flex items-center gap-2 self-start sm:self-end px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-700 shadow-2xs">
+                    <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
+                    <span id="process-step-counter">Phase 1 of 3</span>
+                </div>
+            </div>
+
+            <!-- Interactive Stepper Card -->
+            <div class="bg-white rounded-3xl border border-slate-200/90 shadow-lg shadow-slate-200/40 overflow-hidden">
+                <!-- Progress Bar -->
+                <div class="w-full h-1.5 bg-slate-100">
+                    <div id="process-progress-bar" class="h-full bg-primary-500 transition-all duration-300 ease-out" style="width: 33.33%;"></div>
+                </div>
+
+                <!-- Tappable Step Selector Tabs -->
+                <div role="tablist" aria-label="Execution Steps" class="grid grid-cols-3 border-b border-slate-100 bg-slate-50/70">
+                    <button type="button" role="tab" aria-selected="true" data-step="0"
+                        class="process-tab p-3.5 sm:p-5 text-left border-b-2 border-primary-500 bg-white transition-all active:scale-[0.99]">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="step-badge w-6 h-6 rounded-lg bg-primary-500 text-white text-xs font-extrabold flex items-center justify-center">01</span>
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider text-primary-600 hidden sm:inline">Foundation</span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-bold text-slate-900 leading-tight">Audit &amp; Readiness</p>
+                    </button>
+
+                    <button type="button" role="tab" aria-selected="false" data-step="1"
+                        class="process-tab p-3.5 sm:p-5 text-left border-b-2 border-transparent hover:bg-white/60 transition-all active:scale-[0.99]">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="step-badge w-6 h-6 rounded-lg bg-slate-200 text-slate-600 text-xs font-extrabold flex items-center justify-center">02</span>
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 hidden sm:inline">Capture</span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-bold text-slate-600 leading-tight">BizDev &amp; Bid Capture</p>
+                    </button>
+
+                    <button type="button" role="tab" aria-selected="false" data-step="2"
+                        class="process-tab p-3.5 sm:p-5 text-left border-b-2 border-transparent hover:bg-white/60 transition-all active:scale-[0.99]">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="step-badge w-6 h-6 rounded-lg bg-slate-200 text-slate-600 text-xs font-extrabold flex items-center justify-center">03</span>
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 hidden sm:inline">Scale</span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-bold text-slate-600 leading-tight">Award &amp; Delivery</p>
+                    </button>
+                </div>
+
+                <!-- Active Step Content Stage -->
+                <div id="process-stage" class="p-5 sm:p-8 step-animate">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                        <div class="lg:col-span-7 space-y-3">
+                            <span id="process-phase-tag" class="inline-block text-xs font-extrabold text-primary-600 bg-primary-50 px-3 py-1 rounded-lg">
+                                STEP 01 &bull; INFRASTRUCTURE &amp; COMPLIANCE
+                            </span>
+                            <h3 id="process-title" class="text-xl sm:text-2xl font-extrabold text-slate-900">
+                                Infrastructure &amp; Readiness Audit
+                            </h3>
+                            <p id="process-desc" class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                                We modernize outdated web and CRM systems (or launch your new entity's digital stack from scratch) and align SAM.gov, CAGE codes, NAICS positioning, and executive capability decks so you pass prime buyer due diligence immediately.
+                            </p>
+                        </div>
+
+                        <div class="lg:col-span-5 bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-200/70">
+                            <p class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 mb-3">Key Phase Deliverables</p>
+                            <ul id="process-deliverables" class="space-y-2.5 text-xs sm:text-sm font-medium text-slate-700">
+                                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-primary-500 mt-0.5"></i><span>Modern web footprint &amp; capability statement</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-primary-500 mt-0.5"></i><span>SAM.gov, NAICS &amp; vendor portal verification</span></li>
+                                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-primary-500 mt-0.5"></i><span>CRM &amp; automated intake workflow setup</span></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-form-wrap">
-                    <form id="contactForm">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="name">Full Name <span class="required">*</span></label>
-                                <input type="text" id="name" name="name" required class="form-control" placeholder="Jane Doe">
+                <!-- Interactive Step Controls Footer -->
+                <div class="px-5 sm:px-8 py-4 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between gap-3">
+                    <button type="button" id="process-prev-btn" disabled
+                        class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-400 text-xs sm:text-sm font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-95">
+                        <i class="fas fa-arrow-left text-xs"></i>
+                        <span>Previous</span>
+                    </button>
+
+                    <div class="flex items-center gap-1.5">
+                        <span class="process-dot w-6 h-2 rounded-full bg-primary-500 transition-all"></span>
+                        <span class="process-dot w-2 h-2 rounded-full bg-slate-300 transition-all"></span>
+                        <span class="process-dot w-2 h-2 rounded-full bg-slate-300 transition-all"></span>
+                    </div>
+
+                    <button type="button" id="process-next-btn"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white text-xs sm:text-sm font-bold shadow-sm transition-all active:scale-95">
+                        <span id="process-next-label">Next: Bid Capture</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagement Models Section -->
+    <section id="engagement" class="py-12 md:py-24 transition-colors">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="max-w-2xl mb-6 md:mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-primary-600">Engagement Options</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-1 mb-2">Ways to Partner With Our Firm</h2>
+                <p class="text-slate-600 text-sm sm:text-lg mb-5">Switch between deal-by-deal execution or ongoing fractional leadership.</p>
+
+                <!-- App-Style Segmented Control -->
+                <div class="grid grid-cols-2 sm:inline-flex items-center bg-slate-100 p-1 rounded-2xl w-full sm:w-auto mb-3 md:mb-0">
+                    <button type="button" id="label-sprint" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-900 shadow-sm transition-all active:scale-95">
+                        Per-Solicitation / Deal
+                    </button>
+                    <button type="button" id="label-retainer" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 transition-all active:scale-95">
+                        Ongoing Retainer
+                    </button>
+                    <input type="checkbox" id="engagement-switch" class="sr-only">
+                </div>
+
+                <!-- Mobile Tier Switcher Tabs -->
+                <div role="tablist" aria-label="Engagement Tier Selector" class="grid md:hidden grid-cols-3 gap-1.5 mt-3 bg-slate-100 p-1 rounded-2xl">
+                    <button type="button" data-tier="0" class="tier-tab py-2 px-2 rounded-xl text-[11px] font-bold text-slate-600 transition-all active:scale-95">
+                        Digital &amp; Launch
+                    </button>
+                    <button type="button" data-tier="1" class="tier-tab py-2 px-2 rounded-xl text-[11px] font-extrabold bg-primary-500 text-white shadow-xs transition-all active:scale-95">
+                        Brokerage &amp; BizDev
+                    </button>
+                    <button type="button" data-tier="2" class="tier-tab py-2 px-2 rounded-xl text-[11px] font-bold text-slate-600 transition-all active:scale-95">
+                        Fractional Exec
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 items-stretch">
+                <!-- Tier 1 -->
+                <div data-tier-card="0" class="tier-card hidden md:flex rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900">Digital Infrastructure &amp; Launch</h4>
+                        <div class="my-3">
+                            <span class="text-2xl font-extrabold text-slate-900 mode-title">Modernize or Launch</span>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-5 mode-sub">Fixed-scope web architecture, CRM automation, and SAM.gov readiness.</p>
+                        <ul class="space-y-2.5 text-sm text-slate-600 border-t border-slate-100 pt-5 mb-6">
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>Modern web architecture &amp; executive positioning</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>CRM, intake, &amp; workflow automation setup</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>SAM.gov, CAGE, &amp; Capability Statement build</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>Prime vendor portal &amp; due-diligence readiness</span></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="selectInquiry('a Free Consultation regarding Digital Infrastructure & Business Modernization')" class="block text-center py-3.5 px-5 rounded-xl border border-slate-300 text-slate-800 hover:border-primary-500 hover:text-primary-600 active:bg-slate-50 font-semibold text-sm transition-colors">
+                        Schedule a Free Consultation
+                    </a>
+                </div>
+
+                <!-- Tier 2 (Primary - Default Active on Mobile) -->
+                <div data-tier-card="1" class="tier-card flex rounded-2xl bg-white border-2 border-primary-500 p-6 sm:p-7 flex-col justify-between shadow-lg relative">
+                    <div class="inline-block self-start px-3 py-1 rounded-lg bg-primary-50 text-primary-700 text-[11px] font-extrabold uppercase tracking-wider mb-3">
+                        Most Requested by CEOs &amp; VPs
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900">Contract Brokerage &amp; BizDev</h4>
+                        <div class="my-3">
+                            <span class="text-2xl font-extrabold text-slate-900 mode-title">Pipeline &amp; RFI / RFP Capture</span>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-5 mode-sub">Solicitation-specific brokerage, BizDev outreach, and bid submission.</p>
+                        <ul class="space-y-2.5 text-sm text-slate-600 border-t border-slate-100 pt-5 mb-6">
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>Targeted RFI, RFP &amp; RFQ opportunity sourcing</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>Direct B2B &amp; prime buyer business development</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>Complete proposal &amp; pricing package assembly</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>Contracting officer &amp; prime liaison</span></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="selectInquiry('a Free Consultation regarding Contract Brokerage & Teaming')" class="block text-center py-3.5 px-5 rounded-xl bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white font-bold text-sm transition-colors shadow-sm">
+                        Schedule a Free Consultation
+                    </a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div data-tier-card="2" class="tier-card hidden md:flex rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900">Fractional Procurement &amp; Growth</h4>
+                        <div class="my-3">
+                            <span class="text-2xl font-extrabold text-slate-900 mode-title">Pre-Submission Red Team</span>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-5 mode-sub">Targeted pricing, margin, and FAR/DFARS compliance review.</p>
+                        <ul class="space-y-2.5 text-sm text-slate-600 border-t border-slate-100 pt-5 mb-6">
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>Go/No-Go bid qualification &amp; growth roadmap</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>Subcontractor &amp; material supplier sourcing</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>Continuous digital &amp; operational modernization</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fas fa-check text-primary-500 mt-1"></i><span>Direct support for CEOs, VPs &amp; Operations</span></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="selectInquiry('a Free Consultation regarding Fractional Procurement & Growth Leadership')" class="block text-center py-3.5 px-5 rounded-xl border border-slate-300 text-slate-800 hover:border-primary-500 hover:text-primary-600 active:bg-slate-50 font-semibold text-sm transition-colors">
+                        Schedule a Free Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Firm & Leadership Section -->
+    <section id="about" class="py-12 md:py-24 bg-slate-50 border-y border-slate-100 transition-colors">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                <div class="lg:col-span-7 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-primary-600">About MEG AND GREG GROUP, LLC</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Procurement Execution Meets Modern Business Architecture</h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Most capable commercial manufacturers, suppliers, and facilities operators miss out on lucrative federal and enterprise contracts—either because public-sector acquisition is buried in compliance jargon, or because their digital presence and internal systems look stuck in 2008.
+                    </p>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Led by Founder, CEO &amp; Procurement Director <a href="https://meganfrench.tech/" target="_blank" rel="noopener noreferrer" class="font-semibold text-primary-600 hover:text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors">Megan French</a>, <strong>MEG AND GREG GROUP, LLC</strong> operates directly inside the federal contracting lifecycle every day. We bridge the gap between operational readiness and contract capture—modernizing legacy systems (or launching new ventures from the ground up) and guiding partner firms from first RFI to prime award.
+                    </p>
+                    <div class="pt-1">
+                        <a href="https://meganfrench.tech/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-primary-600 transition-colors group">
+                            <span>Executive Profile: Megan French (meganfrench.tech)</span>
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-primary-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 grid grid-cols-1 gap-3.5">
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200/80">
+                        <h3 class="text-lg font-extrabold text-slate-900">Federal &amp; Prime Contract Capture</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">Compliant RFI/RFP brokerage for manufacturing, aerospace, and facilities leaders.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200/80">
+                        <h3 class="text-lg font-extrabold text-slate-900">Digital Infrastructure &amp; Modernization</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">Modern web platforms, automated workflows, and launch systems for new or legacy firms.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200/80">
+                        <h3 class="text-lg font-extrabold text-slate-900">Strategic Business Development</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">Direct buyer outreach, teaming partnerships, and scalable revenue architecture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Formspree Integrated) -->
+    <section id="contact" class="py-12 md:py-24 transition-colors">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 grid grid-cols-1 lg:grid-cols-12">
+                <!-- Left Info Panel -->
+                <div class="lg:col-span-5 bg-slate-900 text-white p-7 sm:p-10 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Direct Inquiry</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold mt-2 mb-3">Discuss a Contract, Growth Initiative, or System Build</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                            Share your company's capabilities, target solicitation, or digital modernization goals. Inquiries route directly to our executive desk.
+                        </p>
+
+                        <div class="space-y-4 text-sm">
+                            <button type="button" onclick="copyEmail()" class="w-full flex items-center justify-between p-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700/80 active:scale-[0.99] transition-all text-left group">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-envelope text-indigo-400"></i>
+                                    <span class="text-slate-100 font-medium">business@meganfrench.tech</span>
+                                </div>
+                                <span class="text-xs font-semibold text-indigo-400 group-hover:underline">Copy</span>
+                            </button>
+
+                            <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-800/60 text-slate-300">
+                                <i class="fas fa-globe-americas text-indigo-400"></i>
+                                <span>Serving U.S. Commercial &amp; Federal Contractors</span>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email Address <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" required class="form-control" placeholder="jane@example.com">
+
+                            <a href="https://meganfrench.tech/" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between p-3.5 rounded-2xl bg-slate-800/60 hover:bg-slate-800 transition-colors text-slate-200">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-user-tie text-indigo-400"></i>
+                                    <span>Megan French &mdash; CEO &amp; Procurement Director</span>
+                                </div>
+                                <i class="fas fa-arrow-up-right-from-square text-xs text-slate-400"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 mt-8 border-t border-slate-800 flex items-center gap-3">
+                        <a href="https://www.linkedin.com/in/mflogistics" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-11 h-11 rounded-xl bg-slate-800 hover:bg-primary-500 flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin-in text-base"></i>
+                        </a>
+                        <a href="https://meganfrench.tech/" target="_blank" rel="noopener noreferrer" aria-label="meganfrench.tech" class="w-11 h-11 rounded-xl bg-slate-800 hover:bg-primary-500 flex items-center justify-center transition-colors">
+                            <i class="fas fa-globe text-base"></i>
+                        </a>
+                        <a href="mailto:business@meganfrench.tech" aria-label="Email" class="w-11 h-11 rounded-xl bg-slate-800 hover:bg-primary-500 flex items-center justify-center transition-colors">
+                            <i class="fas fa-envelope text-base"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Formspree AJAX Form -->
+                <div class="lg:col-span-7 bg-white p-7 sm:p-10">
+                    <form id="contactForm" action="https://formspree.io/f/xeagadpj" method="POST" class="space-y-4">
+                        <input type="hidden" name="_subject" value="New Executive Inquiry from megandgreggroup.com">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Your Name &amp; Title</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe, VP Operations" required
+                                    class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-base sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all">
                             </div>
-                            <div class="form-group">
-                                <label for="company">Company / Organization <span class="required">*</span></label>
-                                <input type="text" id="company" name="company" required class="form-control" placeholder="Company Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 123-4567">
+                            <div>
+                                <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Work Email</label>
+                                <input type="email" id="email" name="email" placeholder="john@company.com" required
+                                    class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-base sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all">
                             </div>
                         </div>
 
-                        <div class="form-grid b2b-box">
-                            <div class="form-group">
-                                <label for="uei">UEI <span class="label-hint">(If applicable)</span></label>
-                                <input type="text" id="uei" name="uei" class="form-control" placeholder="12-character alphanumeric">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="company" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Company Name</label>
+                                <input type="text" id="company" name="company" placeholder="Acme Manufacturing LLC"
+                                    class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-base sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all">
                             </div>
-                            <div class="form-group">
-                                <label for="cage">CAGE Code <span class="label-hint">(If applicable)</span></label>
-                                <input type="text" id="cage" name="cage" class="form-control" placeholder="5-character code">
-                            </div>
-                        </div>
-
-                        <div class="form-group checkbox-group">
-                            <label>Nature of Inquiry (Select all that apply) <span class="required">*</span></label>
-                            <div class="checkbox-grid">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="inquiry_type" value="dod_logistics" class="checkbox-input">
-                                    <span class="checkbox-text">DoD Logistics Brokerage</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="inquiry_type" value="teaming" class="checkbox-input">
-                                    <span class="checkbox-text">Teaming Agreement</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="inquiry_type" value="federal_contracting" class="checkbox-input">
-                                    <span class="checkbox-text">Federal Contracting Services</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="inquiry_type" value="veteran_hiring" class="checkbox-input">
-                                    <span class="checkbox-text">Veteran Preferential Hiring</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="inquiry_type" value="portfolio_brands" class="checkbox-input">
-                                    <span class="checkbox-text">Portfolio Brands</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="inquiry_type" value="other" class="checkbox-input">
-                                    <span class="checkbox-text">Other Request</span>
-                                </label>
+                            <div>
+                                <label for="sector" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Primary Focus</label>
+                                <select id="sector" name="sector"
+                                    class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-base sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all">
+                                    <option value="Federal / Prime Contract Brokerage">Federal / Prime Contract Brokerage</option>
+                                    <option value="Digital Infrastructure & Modernization">Digital Infrastructure &amp; Modernization</option>
+                                    <option value="B2B Business Development">B2B Business Development</option>
+                                    <option value="New Venture Launch">New Venture Launch</option>
+                                    <option value="Fractional Procurement Leadership">Fractional Procurement Leadership</option>
+                                </select>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="details">Additional Context</label>
-                            <textarea id="details" name="details" class="form-control" placeholder="Provide context, solicitation numbers, or specific requirements here..."></textarea>
+                        <div>
+                            <label for="message" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Project, Solicitation, or Growth Summary</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your capabilities, target contracts, or digital modernization needs..." required
+                                class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-base sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"></textarea>
                         </div>
-                        
-                        <button type="submit" class="submit-btn">
-                            <span>Submit Secure Inquiry</span>
-                            <i class="fas fa-paper-plane"></i>
+
+                        <button type="submit" id="submitBtn" class="w-full py-4 px-6 rounded-2xl bg-primary-500 hover:bg-primary-600 active:scale-[0.99] text-white font-bold text-base shadow-md shadow-primary-500/20 transition-all">
+                            Schedule a Free Consultation
                         </button>
                     </form>
-                    
-                    <div id="form-success" class="form-message success">
-                        <i class="fas fa-check-circle"></i> Thank you. Your detailed inquiry has been received securely.
-                    </div>
-                    <div id="form-error" class="form-message error">
-                        <i class="fas fa-exclamation-triangle"></i> Please select at least one Nature of Inquiry option before submitting.
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                
-                <div class="footer-col">
-                    <a href="#" class="footer-logo">
-                        <img src="MGGLogodark.png" alt="MEG AND GREG GROUP LLC Logo" loading="lazy">
-                    </a>
-                    <p class="footer-about">
-                        A registered holding company specializing in federal contracting, DoD logistics brokerage, and scalable operations focused on domestic manufacturing and veteran hiring.
-                    </p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Portfolio</h4>
-                    <ul>
-                        <li><a href="https://lodgingsources.com" target="_blank" class="hover-acc">Lodging Sources</a></li>
-                        <li><a href="https://pinkpilled.life" target="_blank" class="hover-pink">PINK PILLED&trade;</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about_us.html">About Us</a></li>
-                        <li><a href="#capabilities">Capabilities</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 pt-12 pb-12 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+                <!-- MEG AND GREG GROUP, LLC Vector Logo + Brand -->
+                <a href="#hero" aria-label="MEG AND GREG GROUP, LLC" class="inline-flex items-center gap-3.5 group">
+                    <svg class="h-12 w-12 shrink-0 transition-transform duration-200 group-hover:scale-105" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MEG AND GREG GROUP, LLC Logo">
+                        <circle cx="100" cy="100" r="94" stroke="#94a3b8" stroke-opacity="0.35" stroke-width="1.5"/>
+                        <path d="M22 65 L95 25 L175 68 L155 155 L52 165 Z" stroke="#94a3b8" stroke-opacity="0.28" stroke-width="1.2"/>
+                        <path d="M40 35 L145 170 M162 35 L38 152 M100 6 L100 194 M8 100 L192 100" stroke="#94a3b8" stroke-opacity="0.25" stroke-width="1.2"/>
+                        <circle cx="95" cy="25" r="3" fill="#94a3b8" fill-opacity="0.5"/>
+                        <circle cx="155" cy="155" r="3" fill="#94a3b8" fill-opacity="0.5"/>
+                        <circle cx="52" cy="165" r="3" fill="#94a3b8" fill-opacity="0.5"/>
+                        <text x="100" y="106" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-weight="900" font-size="48" letter-spacing="2">M.E.G.</text>
+                        <text x="100" y="138" text-anchor="middle" fill="#4f74a8" font-family="Inter, sans-serif" font-weight="900" font-size="31" letter-spacing="1.5">G.R.E.G</text>
+                        <text x="142" y="157" text-anchor="middle" fill="#4f74a8" font-family="Inter, sans-serif" font-weight="800" font-size="16">group</text>
+                        <circle cx="172" cy="153" r="4" fill="#eab308"/>
+                    </svg>
+                    <div class="text-left">
+                        <span class="block text-base sm:text-lg font-extrabold tracking-tight text-white">
+                            MEG AND GREG GROUP, LLC
+                        </span>
+                        <span class="block text-xs text-slate-400 mt-0.5">Federal Contracting &bull; Prime Brokerage &bull; Digital Infrastructure</span>
+                    </div>
+                </a>
+
+                <span class="hidden sm:block h-8 w-px bg-slate-800"></span>
+
+                <a href="https://meganfrench.tech/" target="_blank" rel="noopener noreferrer" class="text-left group">
+                    <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 group-hover:text-white transition-colors">Executive Leadership</span>
+                    <span class="block text-xs text-slate-500 group-hover:text-indigo-400 transition-colors">meganfrench.tech &rarr;</span>
+                </a>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> MEG AND GREG GROUP LLC. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="privacy_policy.html">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
+
+            <div class="text-xs text-slate-500">
+                &copy; <span id="year"></span> MEG AND GREG GROUP, LLC. All rights reserved.
             </div>
         </div>
     </footer>
 
+    <!-- Interactive Logic -->
     <script>
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            const bgColor = type === 'success' ? 'bg-slate-900 border-emerald-500' : 'bg-red-900 border-red-500';
+            const icon = type === 'success' ? '<i class="fas fa-check-circle text-emerald-400"></i>' : '<i class="fas fa-exclamation-circle text-red-400"></i>';
 
-        // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        const icon = btn.querySelector('i');
+            toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3.5 rounded-2xl border-l-4 text-white text-sm shadow-2xl transition-all duration-300 transform translate-y-2 opacity-0 ${bgColor}`;
+            toast.innerHTML = `${icon}<span>${message}</span>`;
 
-        function toggleMenu() {
-            menu.classList.toggle('active');
-            if (menu.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+            container.appendChild(toast);
+            requestAnimationFrame(() => toast.classList.remove('translate-y-2', 'opacity-0'));
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-2', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3800);
+        }
+
+        function copyEmail() {
+            const email = 'business@meganfrench.tech';
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast('Copied business@meganfrench.tech to clipboard');
+        }
+
+        function selectInquiry(topic) {
+            const messageBox = document.getElementById('message');
+            if (messageBox) {
+                messageBox.value = `Hello MEG AND GREG GROUP, I'd like to schedule ${topic}. `;
+                setTimeout(() => messageBox.focus(), 400);
             }
         }
 
-        btn.addEventListener('click', toggleMenu);
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
 
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (menu.classList.contains('active')) toggleMenu();
+            /* 1. Sticky Navbar Elevation & Mobile Bottom Nav Active Tracking */
+            const navbar = document.getElementById('navbar');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const mobileNavIndicator = document.getElementById('mobile-nav-indicator');
+            const trackedSections = ['expertise', 'process', 'engagement', 'about', 'contact']
+                .map(id => document.getElementById(id))
+                .filter(Boolean);
+
+            function setActiveMobileTab(activeId, triggerPulse = false) {
+                let activeIndex = -1;
+
+                mobileNavLinks.forEach((link, idx) => {
+                    const isMatch = link.getAttribute('data-nav-target') === activeId;
+                    const icon = link.querySelector('i');
+                    if (isMatch) {
+                        activeIndex = idx;
+                        link.classList.add('text-primary-600');
+                        link.classList.remove('text-slate-500');
+                        if (icon) icon.classList.add('-translate-y-0.5', 'scale-110');
+                    } else {
+                        link.classList.remove('text-primary-600');
+                        link.classList.add('text-slate-500');
+                        if (icon) icon.classList.remove('-translate-y-0.5', 'scale-110');
+                    }
+                });
+
+                if (mobileNavIndicator) {
+                    if (activeIndex >= 0) {
+                        mobileNavIndicator.style.opacity = '1';
+                        mobileNavIndicator.style.transform = `translateX(${activeIndex * 100}%)`;
+                    } else {
+                        mobileNavIndicator.style.opacity = '0';
+                    }
+                }
+
+                if (triggerPulse && activeId) {
+                    const targetEl = document.getElementById(activeId);
+                    if (targetEl) {
+                        targetEl.classList.remove('section-engaged');
+                        void targetEl.offsetWidth;
+                        targetEl.classList.add('section-engaged');
+                    }
+                }
+            }
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetId = link.getAttribute('data-nav-target');
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        e.preventDefault();
+                        if (navigator.vibrate) navigator.vibrate(12);
+                        setActiveMobileTab(targetId, true);
+                        const navHeight = navbar ? navbar.offsetHeight : 64;
+                        const topPos = targetEl.getBoundingClientRect().top + window.scrollY - navHeight - 6;
+                        window.scrollTo({ top: Math.max(0, topPos), behavior: 'smooth' });
+                        history.replaceState(null, '', `#${targetId}`);
+                    }
+                });
             });
-        });
 
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            function updateScrollState() {
+                if (window.scrollY > 12) {
+                    navbar.classList.add('shadow-sm');
+                } else {
+                    navbar.classList.remove('shadow-sm');
+                }
+
+                const scrollCheck = window.scrollY + (window.innerHeight * 0.35);
+                let currentId = null;
+
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 60) {
+                    currentId = 'contact';
+                } else {
+                    for (const sec of trackedSections) {
+                        if (scrollCheck >= sec.offsetTop) {
+                            currentId = sec.id;
+                        }
+                    }
+                }
+                setActiveMobileTab(currentId, false);
+            }
+
+            window.addEventListener('scroll', updateScrollState, { passive: true });
+            updateScrollState();
+
+            /* 2. Hero Interactive Objective Switcher */
+            const pillarTabs = document.querySelectorAll('.pillar-tab');
+            const pillarBadge = document.getElementById('pillar-badge');
+            const pillarMetric = document.getElementById('pillar-metric');
+            const pillarHeading = document.getElementById('pillar-heading');
+            const pillarDesc = document.getElementById('pillar-desc');
+            const pillarCta = document.getElementById('pillar-cta');
+
+            const pillarData = {
+                contracts: {
+                    badge: 'Manufacturing, Aerospace & Facilities',
+                    metric: 'RFI • RFP • Subcontracting',
+                    heading: 'Turn Shop & Field Capacity Into Awarded Federal and Prime Contracts',
+                    desc: 'Our team sources qualified solicitations, positions your company early during RFI/Sources Sought stages, assembles compliant FAR/DFARS proposal packages, and brokers direct relationships with prime buyers.',
+                    inquiry: 'a Free Consultation regarding Federal & Prime Contract Brokerage'
+                },
+                infrastructure: {
+                    badge: 'Legacy Modernization & Systems Architecture',
+                    metric: 'Web • CRM • Vendor Portals',
+                    heading: 'Upgrade Outdated Systems to Pass Prime & Enterprise Due Diligence',
+                    desc: 'We overhaul legacy websites, quoting pipelines, CRM systems, and executive capability decks so institutional buyers immediately see an operational partner ready for scale.',
+                    inquiry: 'a Free Consultation regarding Digital Infrastructure & Modernization'
+                },
+                bizdev: {
+                    badge: 'B2B & Public-Sector Growth',
+                    metric: 'Pipeline • Teaming • Outreach',
+                    heading: 'Build a Repeatable Pipeline of High-Margin Commercial & Prime Deals',
+                    desc: 'We execute targeted decision-maker outreach, negotiate strategic teaming agreements, and establish structured B2B business development engines that replace inconsistent referrals.',
+                    inquiry: 'a Free Consultation regarding Strategic Business Development'
+                },
+                launch: {
+                    badge: 'Zero-to-One Entity & Division Launch',
+                    metric: 'SAM.gov • Brand • Go-To-Market',
+                    heading: 'Stand Up a New Company or Specialized Division Ready to Bid',
+                    desc: 'From entity positioning, SAM.gov/CAGE setup, and digital stack deployment to initial outbound market entry, we build the commercial and compliance foundation from day one.',
+                    inquiry: 'a Free Consultation regarding a New Venture Launch'
+                }
+            };
+
+            pillarTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const key = tab.getAttribute('data-pillar');
+                    const data = pillarData[key];
+                    if (!data) return;
+
+                    pillarTabs.forEach(t => {
+                        const isSelected = t === tab;
+                        const icon = t.querySelector('i');
+                        const dot = t.querySelector('.pillar-dot');
+                        t.setAttribute('aria-selected', String(isSelected));
+
+                        if (isSelected) {
+                            t.classList.add('border-2', 'border-primary-500', 'bg-primary-50/60', 'text-slate-900');
+                            t.classList.remove('border', 'border-slate-200', 'bg-slate-50/60', 'text-slate-700');
+                            if (icon) { icon.classList.add('text-primary-600'); icon.classList.remove('text-slate-400'); }
+                            if (dot) { dot.classList.add('bg-primary-500'); dot.classList.remove('bg-transparent'); }
+                        } else {
+                            t.classList.remove('border-2', 'border-primary-500', 'bg-primary-50/60', 'text-slate-900');
+                            t.classList.add('border', 'border-slate-200', 'bg-slate-50/60', 'text-slate-700');
+                            if (icon) { icon.classList.remove('text-primary-600'); icon.classList.add('text-slate-400'); }
+                            if (dot) { dot.classList.remove('bg-primary-500'); dot.classList.add('bg-transparent'); }
+                        }
+                    });
+
+                    if (pillarBadge) pillarBadge.textContent = data.badge;
+                    if (pillarMetric) pillarMetric.textContent = data.metric;
+                    if (pillarHeading) pillarHeading.textContent = data.heading;
+                    if (pillarDesc) pillarDesc.textContent = data.desc;
+                    if (pillarCta) pillarCta.setAttribute('onclick', `selectInquiry('${data.inquiry}')`);
+                });
+            });
+
+            /* 3. Interactive Services Dropdowns + Mobile Horizontal Carousel */
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                const toggleBtn = card.querySelector('.service-toggle');
+                const body = card.querySelector('.service-body');
+                const chevron = card.querySelector('.service-chevron');
+                const hint = card.querySelector('.service-hint span');
+
+                toggleBtn.addEventListener('click', () => {
+                    const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+                    const nextState = !isExpanded;
+
+                    toggleBtn.setAttribute('aria-expanded', String(nextState));
+                    body.classList.toggle('hidden', !nextState);
+
+                    if (nextState) {
+                        chevron.classList.add('rotate-180', 'bg-primary-50', 'text-primary-600');
+                        chevron.classList.remove('bg-slate-100', 'text-slate-600');
+                        card.classList.add('border-primary-300', 'ring-1', 'ring-primary-500/10');
+                        if (hint) hint.textContent = 'Hide details';
+                    } else {
+                        chevron.classList.remove('rotate-180', 'bg-primary-50', 'text-primary-600');
+                        chevron.classList.add('bg-slate-100', 'text-slate-600');
+                        card.classList.remove('border-primary-300', 'ring-1', 'ring-primary-500/10');
+                        if (hint) hint.textContent = 'Tap to expand';
+                    }
+                });
+            });
+
+            const carousel = document.getElementById('services-carousel');
+            const serviceDots = document.querySelectorAll('.service-dot');
+            const prevBtn = document.getElementById('service-prev');
+            const nextBtn = document.getElementById('service-next');
+
+            function updateCarouselDots() {
+                if (!carousel || serviceCards.length === 0) return;
+                const scrollLeft = carousel.scrollLeft;
+                let closestIdx = 0;
+                let minDiff = Infinity;
+
+                serviceCards.forEach((card, idx) => {
+                    const diff = Math.abs(card.offsetLeft - carousel.offsetLeft - scrollLeft);
+                    if (diff < minDiff) {
+                        minDiff = diff;
+                        closestIdx = idx;
+                    }
+                });
+
+                serviceDots.forEach((dot, idx) => {
+                    if (idx === closestIdx) {
+                        dot.classList.add('w-6', 'bg-primary-500');
+                        dot.classList.remove('w-2', 'bg-slate-300');
+                    } else {
+                        dot.classList.remove('w-6', 'bg-primary-500');
+                        dot.classList.add('w-2', 'bg-slate-300');
+                    }
+                });
+            }
+
+            function scrollToServiceSlide(index) {
+                if (!carousel || !serviceCards[index]) return;
+                const targetCard = serviceCards[index];
+                carousel.scrollTo({
+                    left: targetCard.offsetLeft - carousel.offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
+
+            if (carousel) {
+                carousel.addEventListener('scroll', updateCarouselDots, { passive: true });
+                serviceDots.forEach(dot => {
+                    dot.addEventListener('click', () => {
+                        const idx = parseInt(dot.getAttribute('data-slide'), 10);
+                        scrollToServiceSlide(idx);
+                    });
+                });
+                if (prevBtn && nextBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        const cardWidth = serviceCards[0].offsetWidth + 16;
+                        carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                    });
+                    nextBtn.addEventListener('click', () => {
+                        const cardWidth = serviceCards[0].offsetWidth + 16;
+                        carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                    });
+                }
+            }
+
+            /* 4. Interactive 3-Step Process Stepper */
+            const processTabs = document.querySelectorAll('.process-tab');
+            const processDots = document.querySelectorAll('.process-dot');
+            const processStage = document.getElementById('process-stage');
+            const processCounter = document.getElementById('process-step-counter');
+            const processProgressBar = document.getElementById('process-progress-bar');
+            const processPhaseTag = document.getElementById('process-phase-tag');
+            const processTitle = document.getElementById('process-title');
+            const processDesc = document.getElementById('process-desc');
+            const processDeliverables = document.getElementById('process-deliverables');
+            const processPrevBtn = document.getElementById('process-prev-btn');
+            const processNextBtn = document.getElementById('process-next-btn');
+            const processNextLabel = document.getElementById('process-next-label');
+
+            const processStepsData = [
+                {
+                    tag: 'STEP 01 • INFRASTRUCTURE & COMPLIANCE',
+                    title: 'Infrastructure & Readiness Audit',
+                    desc: 'We modernize outdated web and CRM systems (or launch your new entity\'s digital stack from scratch) and align SAM.gov, CAGE codes, NAICS positioning, and executive capability decks so you pass prime buyer due diligence immediately.',
+                    deliverables: [
+                        'Modern web footprint & capability statement',
+                        'SAM.gov, NAICS & vendor portal verification',
+                        'CRM & automated intake workflow setup'
+                    ],
+                    nextLabel: 'Next: Bid Capture'
+                },
+                {
+                    tag: 'STEP 02 • BUSINESS DEVELOPMENT & CAPTURE',
+                    title: 'Business Development & Bid Capture',
+                    desc: 'Our team drives targeted B2B and prime buyer outreach, qualifies high-fit RFIs and RFPs early, structures teaming agreements, and packages compliant technical and pricing proposals.',
+                    deliverables: [
+                        'Direct prime & agency buyer introductions',
+                        'RFI / Sources Sought early positioning',
+                        'Full RFP compliance matrix & pricing package'
+                    ],
+                    nextLabel: 'Next: Award & Delivery'
+                },
+                {
+                    tag: 'STEP 03 • EXECUTION & SCALE',
+                    title: 'Contract Award & Scalable Delivery',
+                    desc: 'From contract negotiation and prime vendor portal onboarding to automated operational workflows, we ensure your business executes cleanly and converts initial wins into repeat awards.',
+                    deliverables: [
+                        'Subcontract & SLA negotiation support',
+                        'Prime vendor portal & compliance onboarding',
+                        'Repeatable pipeline & renewal tracking'
+                    ],
+                    nextLabel: 'Book Your Consultation'
+                }
+            ];
+
+            let currentProcessStep = 0;
+
+            function renderProcessStep(stepIdx) {
+                currentProcessStep = stepIdx;
+                const data = processStepsData[stepIdx];
+                if (!data) return;
+
+                if (processCounter) processCounter.textContent = `Phase ${stepIdx + 1} of 3`;
+                if (processProgressBar) processProgressBar.style.width = `${((stepIdx + 1) / 3) * 100}%`;
+                if (processPhaseTag) processPhaseTag.textContent = data.tag;
+                if (processTitle) processTitle.textContent = data.title;
+                if (processDesc) processDesc.textContent = data.desc;
+
+                if (processDeliverables) {
+                    processDeliverables.innerHTML = data.deliverables
+                        .map(item => `<li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-primary-500 mt-0.5"></i><span>${item}</span></li>`)
+                        .join('');
+                }
+
+                if (processStage) {
+                    processStage.classList.remove('step-animate');
+                    void processStage.offsetWidth;
+                    processStage.classList.add('step-animate');
+                }
+
+                processTabs.forEach((tab, idx) => {
+                    const isSelected = idx === stepIdx;
+                    const badge = tab.querySelector('.step-badge');
+                    const titleEl = tab.querySelector('p');
+                    tab.setAttribute('aria-selected', String(isSelected));
+
+                    if (isSelected) {
+                        tab.classList.add('border-primary-500', 'bg-white');
+                        tab.classList.remove('border-transparent');
+                        if (badge) { badge.classList.add('bg-primary-500', 'text-white'); badge.classList.remove('bg-slate-200', 'text-slate-600'); }
+                        if (titleEl) { titleEl.classList.add('text-slate-900'); titleEl.classList.remove('text-slate-600'); }
+                    } else {
+                        tab.classList.remove('border-primary-500', 'bg-white');
+                        tab.classList.add('border-transparent');
+                        if (badge) { badge.classList.remove('bg-primary-500', 'text-white'); badge.classList.add('bg-slate-200', 'text-slate-600'); }
+                        if (titleEl) { titleEl.classList.remove('text-slate-900'); titleEl.classList.add('text-slate-600'); }
+                    }
+                });
+
+                processDots.forEach((dot, idx) => {
+                    if (idx === stepIdx) {
+                        dot.classList.add('w-6', 'bg-primary-500');
+                        dot.classList.remove('w-2', 'bg-slate-300');
+                    } else {
+                        dot.classList.remove('w-6', 'bg-primary-500');
+                        dot.classList.add('w-2', 'bg-slate-300');
+                    }
+                });
+
+                if (processPrevBtn) {
+                    processPrevBtn.disabled = stepIdx === 0;
+                    if (stepIdx === 0) {
+                        processPrevBtn.classList.add('text-slate-400');
+                        processPrevBtn.classList.remove('text-slate-700', 'hover:border-primary-400');
+                    } else {
+                        processPrevBtn.classList.remove('text-slate-400');
+                        processPrevBtn.classList.add('text-slate-700', 'hover:border-primary-400');
+                    }
+                }
+
+                if (processNextLabel) {
+                    processNextLabel.textContent = data.nextLabel;
+                }
+            }
+
+            processTabs.forEach((tab, idx) => {
+                tab.addEventListener('click', () => renderProcessStep(idx));
+            });
+
+            if (processPrevBtn) {
+                processPrevBtn.addEventListener('click', () => {
+                    if (currentProcessStep > 0) renderProcessStep(currentProcessStep - 1);
+                });
+            }
+
+            if (processNextBtn) {
+                processNextBtn.addEventListener('click', () => {
+                    if (currentProcessStep < processStepsData.length - 1) {
+                        renderProcessStep(currentProcessStep + 1);
+                    } else {
+                        selectInquiry('a Free Consultation regarding the 3-Phase Acquisition & Modernization Roadmap');
+                        const contactEl = document.getElementById('contact');
+                        if (contactEl) {
+                            const navHeight = navbar ? navbar.offsetHeight : 64;
+                            const topPos = contactEl.getBoundingClientRect().top + window.scrollY - navHeight - 6;
+                            window.scrollTo({ top: Math.max(0, topPos), behavior: 'smooth' });
+                        }
+                    }
+                });
+            }
+
+            /* 5. Engagement Mode Segmented Control & Mobile Tier Switcher */
+            const engagementSwitch = document.getElementById('engagement-switch');
+            const labelSprint = document.getElementById('label-sprint');
+            const labelRetainer = document.getElementById('label-retainer');
+            const modeTitles = document.querySelectorAll('.mode-title');
+            const modeSubs = document.querySelectorAll('.mode-sub');
+
+            const modes = {
+                sprint: [
+                    { title: 'Modernize or Launch', sub: 'Fixed-scope web architecture, CRM automation, and SAM.gov readiness.' },
+                    { title: 'Pipeline & RFI / RFP Capture', sub: 'Solicitation-specific brokerage, BizDev outreach, and bid submission.' },
+                    { title: 'Pre-Submission Red Team', sub: 'Targeted pricing, margin, and FAR/DFARS compliance review.' }
+                ],
+                retainer: [
+                    { title: 'Digital & Ops Evolution', sub: 'Ongoing systems modernization, portal updates, and compliance audits.' },
+                    { title: 'Dedicated Capture & BizDev', sub: 'Continuous federal/prime prospecting, pipeline management, and bid execution.' },
+                    { title: 'Executive Leadership', sub: 'Ongoing fractional procurement, vendor strategy, and growth advisory.' }
+                ]
+            };
+
+            function setEngagementMode(isRetainer) {
+                if (engagementSwitch) engagementSwitch.checked = isRetainer;
+                const activeData = isRetainer ? modes.retainer : modes.sprint;
+
+                modeTitles.forEach((el, idx) => {
+                    if (activeData[idx]) el.textContent = activeData[idx].title;
+                });
+                modeSubs.forEach((el, idx) => {
+                    if (activeData[idx]) el.textContent = activeData[idx].sub;
+                });
+
+                if (isRetainer) {
+                    labelRetainer.classList.add('bg-white', 'text-slate-900', 'shadow-sm', 'font-bold');
+                    labelRetainer.classList.remove('text-slate-600', 'font-semibold');
+                    labelSprint.classList.remove('bg-white', 'text-slate-900', 'shadow-sm', 'font-bold');
+                    labelSprint.classList.add('text-slate-600', 'font-semibold');
+                } else {
+                    labelSprint.classList.add('bg-white', 'text-slate-900', 'shadow-sm', 'font-bold');
+                    labelSprint.classList.remove('text-slate-600', 'font-semibold');
+                    labelRetainer.classList.remove('bg-white', 'text-slate-900', 'shadow-sm', 'font-bold');
+                    labelRetainer.classList.add('text-slate-600', 'font-semibold');
+                }
+            }
+
+            if (labelSprint && labelRetainer) {
+                labelSprint.addEventListener('click', () => setEngagementMode(false));
+                labelRetainer.addEventListener('click', () => setEngagementMode(true));
+            }
+
+            const tierTabs = document.querySelectorAll('.tier-tab');
+            const tierCards = document.querySelectorAll('.tier-card');
+
+            tierTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const selectedTier = tab.getAttribute('data-tier');
+                    tierTabs.forEach(t => {
+                        const isMatch = t === tab;
+                        if (isMatch) {
+                            t.classList.add('bg-primary-500', 'text-white', 'font-extrabold', 'shadow-xs');
+                            t.classList.remove('text-slate-600', 'font-bold');
+                        } else {
+                            t.classList.remove('bg-primary-500', 'text-white', 'font-extrabold', 'shadow-xs');
+                            t.classList.add('text-slate-600', 'font-bold');
+                        }
+                    });
+
+                    tierCards.forEach(card => {
+                        if (card.getAttribute('data-tier-card') === selectedTier) {
+                            card.classList.remove('hidden');
+                            card.classList.add('flex', 'step-animate');
+                        } else {
+                            card.classList.add('hidden');
+                            card.classList.remove('flex', 'step-animate');
+                        }
+                    });
+                });
+            });
+
+            /* 6. Formspree AJAX Submission */
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const originalText = submitBtn.textContent;
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+
+                    try {
+                        const response = await fetch(contactForm.action, {
+                            method: 'POST',
+                            body: new FormData(contactForm),
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        if (response.ok) {
+                            contactForm.reset();
+                            showToast('Inquiry received! Our team will follow up shortly.');
+                        } else {
+                            const data = await response.json().catch(() => ({}));
+                            const errorMsg = data.errors ? data.errors.map(err => err.message).join(', ') : 'Submission failed. Please try again.';
+                            showToast(errorMsg, 'error');
+                        }
+                    } catch (err) {
+                        showToast('Network error. Please email business@meganfrench.tech directly.', 'error');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                });
             }
         });
-
-        // Form Submission Logic
-        const contactForm = document.getElementById('contactForm');
-        const formSuccess = document.getElementById('form-success');
-        const formError = document.getElementById('form-error');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const checkboxes = document.querySelectorAll('input[name="inquiry_type"]:checked');
-            
-            if (checkboxes.length === 0) {
-                formError.style.display = 'flex';
-                formSuccess.style.display = 'none';
-                setTimeout(() => formError.style.display = 'none', 5000);
-                return; 
-            }
-            
-            formError.style.display = 'none';
-            contactForm.reset();
-            formSuccess.style.display = 'flex';
-            setTimeout(() => formSuccess.style.display = 'none', 5000);
-        });
-
-        // Intersection Observer for scroll animations
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                    obs.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
-
-        // ABSOLUTE PERFORMANCE HACK: Defer heavy video rendering
-        // The mobile device will build and display the entire text/design of the site FIRST,
-        // and only inject the heavy MP4 video element 250 milliseconds after it finishes.
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const videoContainer = document.getElementById('video-container');
-                if(videoContainer) {
-                    videoContainer.innerHTML = '<video src="MGGVideo.mp4" autoplay loop muted playsinline class="video-element"></video>';
-                }
-            }, 250); 
-        });
-
     </script>
 </body>
 </html>
